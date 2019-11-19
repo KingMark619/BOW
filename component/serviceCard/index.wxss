@@ -1,0 +1,119 @@
+/* component/serviceCard/index.wxss */
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px lightgray;
+  border-radius: 5px;
+}
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7f7f7;
+  width: 100%;
+  padding-bottom: 25px;
+}
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.last-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 25px;
+}
+.right-side {
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+  width: 50%;
+}
+.left-side {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-right: 1px solid #f7f7f7;
+}
+.left-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.right-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.left-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.main-title-black {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: black;
+}
+.main-title-black-last {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: black;
+}
+.main-title-gray {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: gray;
+  margin-top: -20px;
+  padding-left: 5px;
+}
+.main-title-gray-last {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  color: gray;
+  margin-top: -20px;
+  padding-left: 5px;
+}
+.main-poster {
+  border-radius: 5px;
+  margin-top: 25px;
+  height: 90px;
+  width: 120px;
+}
+.sec-title-black {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: black;
+}
+.sec-title-gray {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  color: gray;
+  padding-left: 5px;
+  margin-top: -10px;
+}
+.sec-poster {
+  border-radius: 50%;
+  margin-top: 13px;
+  height: 100rpx;
+  width: 100rpx;
+}

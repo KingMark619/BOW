@@ -1,0 +1,49 @@
+/* component/address/index.wxss */
+.block {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  /* backdrop-filter: blur(10px); */
+}
+.title-row {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  padding: 15px;
+  background: #f7f7f7;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 0 8px 8px #8b8b8b;
+}
+.title {
+  color: black;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.dismiss {
+  display: block;
+  margin: auto;
+  margin-top: -15vh;
+  border-radius: 50%;
+}
+.didi {
+  display: block;
+  margin: auto;
+  margin-top: -15vh;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.didi-icon {
+  width: 50px;
+  height: 50px;
+}

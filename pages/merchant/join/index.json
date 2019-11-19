@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "LISTING",
+  "usingComponents": {
+    "name-card": "../../../component/nameCard/index",
+    "rec-name-card": "../../../component/recNameCard/index"
+  }
+}
+
+  

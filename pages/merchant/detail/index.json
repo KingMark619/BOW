@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "老外来了 - BEST OF WUHAN",
+  "usingComponents": {
+    "Divider":"/component/divider/index",
+    "Address":"/component/address/index",
+    "INFO-TRAVEL":"/component/infoTravel/index",
+    "ICON-BLOCK":"/component/icon/index",
+    "GALLERY":"/component/gallery/index",
+    "NEARBY-LOCATION": "/component/nearLocation/index"
+  }
+}

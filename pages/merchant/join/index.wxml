@@ -1,0 +1,75 @@
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image 
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<!-- add new header -->
+<view class="header-block">
+  <text class="header-text">BEST OF WUHAN</text>
+</view>
+<!-- end new header -->
+<view class="page" wx:if="{{ loaded }}">
+      <view class="input-block">
+        <input
+          type="text"
+          class="input"
+          bindfocus="navigate"
+          placeholder="Search"
+          placeholder-class="placeholder"
+          confirm-type="search"
+        />
+      </view>
+     <view
+        style='margin:0;'
+        class="fui-list-group">
+        <block wx:for="{{ location }}" wx:key="key" >
+          <name-card
+            location="{{ item }}"
+            type="true"
+            title="{{ title[index] }}"
+            catId="{{ catId }}"
+            wx:if="{{ item.listing_status != 0 }}"
+          />
+        </block>
+      </view>
+
+      <view class="bottom-row">
+      <view class="bottom-bar">
+        <view class="iconBlock" bindtap="goToIndex">
+          <image
+            src="/image/house-1.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToIndex"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Home' : '首页'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToRec">
+          <image
+            src="/image/tab-bar/favourites.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToRec"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Recommended' : '推荐'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToTravel">
+          <image
+            src="/image/tab-bar/map.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToTravel"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Travel' : '旅游'}}
+          </text>
+        </view>
+      </view>
+    </view>
+    </view>

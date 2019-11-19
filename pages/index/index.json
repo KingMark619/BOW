@@ -1,0 +1,13 @@
+{
+    "backgroundColor": "#fafafa",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "老外来了- BEST OF WUHAN",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "TRAVEL-POSTER": "/component/travelPoster/index",
+      "SERVICE-CARD": "/component/serviceCard/index",
+      "NAME-CARD": "/component/nameCard/index"
+    }
+}

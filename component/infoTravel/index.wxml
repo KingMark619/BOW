@@ -1,0 +1,26 @@
+<!--component/infoTravel/index.wxml-->
+<view class="block">
+  <view class="title-row">
+    <text class="title">{{ title }} </text>
+  </view>
+  <view wx:if="{{ content }}"class="highlight-row">
+    <!-- <text class="highlight-head">
+      HIGHLIGHT: 
+    </text> -->
+    <text class="highlight-content">
+      <text class="red-dot">*</text> Tian Na Men Square
+      <text class="red-dot">*</text> Yellow Crane Tower
+      <text class="red-dot">*</text> Beijing Zoo
+      <!-- {{ content }} -->
+    </text>
+  </view>
+  <view class="text-row">
+    <text class="text">
+       {{ text }}
+    </text>
+    <text wx:if="{{ text2 }}" class="text">
+       {{ text2 }}
+    </text>
+  </view>
+</view>
+

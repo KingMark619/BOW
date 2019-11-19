@@ -1,0 +1,9 @@
+<!--component/divider/index.wxml-->
+<view
+  class="full-width"
+  wx:if="{{ full }}">
+</view>
+<view
+  class="normal"
+  wx:if="{{ normal }}">
+</view>

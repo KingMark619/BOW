@@ -1,0 +1,7 @@
+<!--pages/merchant/allmerchant/direction/direction.wxml-->
+ <view class="map-box">
+    <map class="map" latitude="{{ lat }}" longitude="{{ long }}" markers="{{ markers }}" show-location="true" />
+  </view>
+  <view class="text-box">
+    <text class="title">{{ address }}</text>
+  </view>

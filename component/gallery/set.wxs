@@ -1,0 +1,30 @@
+var setPadding = function (padding) {
+  return 'padding: ' + padding + 'px;'
+};
+var setHeight = function (height) {
+  return 'height: ' + height + 'px;'
+};
+var img2B2 = function (h_w, mTop, mBot) {
+  return 'width: ' + h_w + 'px; height: ' + h_w + 'px; margin-top: ' + mTop + 'px; margin-bottom: ' + mBot + 'px;'
+};
+var img1B1 = function (h_w, mTop, mBot) {
+  return 'width: ' + h_w + 'px; height: ' + h_w + 'px; margin-top: ' + mTop + 'px; margin-bottom: ' + mBot + 'px;'
+};
+var img2B1 = function (h, w, mTop, mBot) {
+  return 'height: ' + h + 'px; width: ' + w + 'px; margin-top: ' + mTop + 'px; margin-bottom: ' + mBot + 'px;'
+};
+var img1B2 = function (h, w, mTop, mBot) {
+  return 'height: ' + h + 'px; width: ' + w + 'px; margin-top: ' + mTop + 'px; margin-bottom: ' + mBot + 'px;'
+};
+var img3B2 = function (h, w, mTop, mBot) {
+  return 'height: ' + h + 'px; width: ' + w + 'px; margin-top: ' + mTop + 'px; margin-bottom: ' + mBot + 'px;'
+};
+module.exports = {
+  setPadding: setPadding,
+  setHeight: setHeight,
+  img2B2: img2B2,
+  img1B1: img1B1,
+  img2B1: img2B1,
+  img1B2: img1B2,
+  img3B2: img3B2
+};

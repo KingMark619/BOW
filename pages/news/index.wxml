@@ -1,0 +1,48 @@
+<!--pages/news/index.wxml-->
+<view class="swiper-wrapper">
+  <view class="logo-block" wx:if="{{ type === 'school' }}">
+    <image
+      src="https://upload.wikimedia.org/wikipedia/en/6/68/Wuhan_University_Logo.png"
+      class="logo"
+      mode="widthFix"
+    />
+  </view>
+  <swiper
+    wx:if="{{ type != 'school' }}"
+    class="swiper"
+    duration="{{ duration }}"
+    indicatorDots="{{ indicatorDots }}"
+    interval="{{ interval }}">
+      <swiper-item class="swiper-item">
+        <image
+          src="https://img.etimg.com/thumb/msid-65975178,width-643,imgsize-201359,resizemode-4/travellinginagroup.jpg"
+          class="slide-image"
+          mode="aspectFill"
+        />
+      </swiper-item>
+      <swiper-item class="swiper-item">
+        <image
+          src="https://www.statravel.com/static/us_division_web_live/assets/sta-travel-default-min.jpg"
+          class="slide-image"
+          mode="aspectFill"
+        />
+      </swiper-item>
+  </swiper>
+</view>
+<view class="head-wrapper">
+  <text class="title">WUHAN UNIVERSITY</text>
+  <text class="sub-title">八一路299号，武汉大学</text>
+  <text class="sub-title">Contact 027-00**** for more information</text>
+  <!-- <text class="price">¥ 1400 {{ goods.presellprice }}</text> -->
+</view>
+<view class="info-travel-wrapper">
+  <INFO-TRAVEL
+    title="May 21, 2019"
+    text="The undergraduates, Master’s students and Doctor’s students, who will graduate in June 2019: \n Undergraduates taking Chinese-taught programs shall reach at lease beginner’s level of Chinese proficiency（HSK4)Undergraduates, who study Chinese language、Chinese literature, Chinese culture and Chinese philosophy, shall reach at lease intermediate level of Chinese proficiency（HSK5）.Master’s and Doctor’s students taking Chinese-taught programs shall reach at lease intermediate level of Chinese proficiency（HSK5）. Undergraduates and Master’s students, who study Clinical Medicine in English-taught programs, shall reach at lease beginner’s level of Chinese proficiency（HSK4）.\nInternational students, who didn’t obtain required HSK certificate ,should come to office 104 for HSK test registration as soon as possible. \n Please tell each other."
+  />
+  <INFO-TRAVEL
+    title="Photo-Taking for Graduation Certificate"
+    text="This is to notice about taking electronic photos for your graduation certificates. As usual, the photos will be taken by Xinhua News Agency Hubei Branch and will be used for your graduation certificates and degree certificates.\n 1.PLACE: First Floor lobby of 大学生创新创业实践中心at WUSHUI (Near Teaching Building No.11) \n 2.TIME: May 21st – 24th （8:30-12:00am,13:00-18:00pm）\n 3.Please note: \n 1)As the picture background is in blue color, please AVOID wearing blue. No make-up or accessories (eg. earrings) allowed. No (hair) covering ears.\n 2)Please bring your passport AND student ID card. \n 3)While waiting for the photo, please avoid making noise or causing any other disturbance to people’s work there. \n 4)Students unable to come on schedule please contact your local Xinhua News Agency to take the photo individually before March 1st,2020"
+  />
+</view>
+

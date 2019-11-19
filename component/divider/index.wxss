@@ -1,0 +1,9 @@
+/* component/divider/index.wxss */
+.normal {
+  border-bottom: 2px dashed #f7f7f7;
+  width: 90%;
+}
+.full-width {
+  border-bottom: 2px dashed #f7f7f7;
+  width: 100%;
+}

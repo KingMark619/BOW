@@ -1,0 +1,373 @@
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<view
+  class="header-icons"
+  style="margin-top:{{statusBar - 20}}px"
+>
+  <view>
+    <image
+      src="/image/back.svg"
+      mode="widthFix"
+      class="back-icon"
+      bindtap="goback"
+    />
+  </view>
+  <view class="divider" />
+  <view>
+    <image
+      src="/image/home.svg"
+      mode="widthFix"
+      class="home-icon"
+      bindtap="onHome"
+    />
+  </view>
+</view>
+
+<!-- <swiper
+  indicator-dots="{{ indicatorDots }}"
+  autoplay="{{ autoplay }}"
+  interval="{{ interval }}"
+  duration="{{ duration }}"
+  style='height:450rpx'
+  wx:if="{{ loaded }}"
+  wx:if="{{ type === 'normal' }}"
+>
+  <block wx:for="{{ photos250 }}" wx:key="key">
+    <swiper-item>
+      <image
+        src="{{ item }}"
+        class="slide-image"
+      />
+    </swiper-item>
+  </block>
+</swiper> -->
+
+<view class="page" wx:if="{{ loaded }}" wx:if="{{ type === 'normal'}}">
+  <view class="gallery">
+    <image
+      src="{{ location.logo }}"
+      mode="widthFix"
+      class="gallery-image"
+      bindtap="more"
+    />
+    <!-- <GALLERY
+      galleryImages="{{ photosFull }}"
+      bind:preview="preview"
+      bind:more="more"
+      id="gallery"
+      class="galleryComponent"  
+    /> -->
+  </view>
+  <view class="first-row">
+    <view class="head-row">
+      <text class="head-title">
+        {{ title }}
+      </text>
+    </view>
+    
+    <!-- <button bindtap="sharePoster">SHARE shit</button> -->
+
+    <!-- <view class="info-block">
+      <text class="text" wx:if="{{ location.address }}" bindtap="showTaxi">
+        {{ location.address }}
+      </text>
+      <text class="text-info end" wx:if="{{ distance != '' }}">
+        {{ distance }} {{ lang === 'en' ? ' Km' : ' 千米'}}
+      </text> 
+    </view> -->
+    <view class="info-block" wx:if="{{ location.address }}">
+      <text class="text"> {{ location.address }} </text>
+    </view>
+    <view class="info-block" wx:if="{{ distance != '' }}">
+      <!-- <text class="text"> {{ lang === 'en' ? 'Avg Price' : '人均¥' }} : {{ lang ==='en' ? avgPrice+' 元' : avgPrice+' 元'}} </text> -->
+      <text class="text" wx:if="{{ distance != '' }}">
+        {{ lang === 'en' ? 'Distance : ' : '距离 : '}}{{ distance }} {{ lang === 'en' ? ' Km' : ' 千米'}}
+      </text> 
+    </view>
+    <view class="info-block">
+      <text class="text" wx:if="{{ location.mon_sat != '-' }}">
+        {{ lang === 'en' ? 'Opening Time' : '工作时间' }} : {{ location.mon_sat }}
+      </text>
+    </view>
+    <!-- <view class="icon-block {{ location.mon_sat != '-' ? '' : 'no-time'}}">
+      <image
+        class="icon"
+        src="/image/phone-1.svg"
+        bindtap="makeCall"
+        wx:if="{{ location.telephone != 'none' }}"
+      />
+      <image
+        class="icon"
+        src="/image/wechat-1.svg"
+        bindtap="showWechat"
+        wx:if="{{ location.wechat }}"
+      />
+      <image
+        class="icon"
+        src="/image/taxi-1.svg"
+        bindtap="showTaxi"
+        wx:if="{{ location.address }}"
+      />
+      </view> -->
+  </view>
+  <!-- <view class="divider"/> -->
+  <view class="fourth-row" wx:if="{{ location.address }}">
+      <map
+        bindtap="clickToMap"
+        id="map"
+        longitude="{{ location.longitude }}"
+        latitude="{{ location.latitude }}"
+        scale="14"
+        markers="{{ markers }}"
+        polyline="{{polyline}}"
+        show-location
+        style="width: 85%;margin:auto; height: 180px;"
+      >
+      </map>
+  </view>
+  <view class="second-row" wx:if="{{ location.content != '' }}" >
+    <text class="sub-title">
+      {{ lang === 'en' ? 'Description' : '简介'}}
+    </text>
+    <text class="description {{ more }}">
+    {{ content }}
+   </text>
+   <!-- <text
+    class="more-text"
+    bindtap="moreText">
+      {{ lang === 'en' ? 'More' : '更多'}}
+  </text> -->
+  </view>
+  <!-- <view class="divider"/> -->
+  <view class="third-row" wx:if="{{ location.image_gallery != 'N;'}}">
+    <text class="sub-title">
+      {{ lang === 'en' ? 'About' : '亮点'}}
+    </text>
+    <view class="photo-block">
+      <block wx:for="{{ highlight[0].picture }}" wx:key="key">
+        <view class="high-block">
+          <view class="high-text-block">
+          <view class="high-title">
+        {{ lang === 'en' ? highlight[0].title[index][0] : highlight[0].title[index][1] }}
+        </view>
+          <view class="high-caption">
+            {{ lang === 'en' ? highlight[0].description[index][0] : highlight[0].description[index][1]  }} 
+          </view>
+        </view>
+        </view>
+        <view class="image-block">
+          <image
+            src="{{ highlight[0].picture[index] }}"
+            class="photo"
+            mode="widthFix"
+            bindtap="preview"
+            data-index="{{ highlight[0].picture[index] }}"
+          />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="fifth-row" wx:if="{{ nearLocation != [] }}">
+    <text class="sub-title">
+      {{ lang === 'en' ? 'You might also like' : '类似商家'}}
+    </text>
+  </view>
+  <view class="nearLocation-block" wx:if="{{ nearLocation != [] }}">
+      <NEARBY-LOCATION
+        location = "{{ nearLocation }}"
+        type = "{{ nearType }}"
+        catId = "{{ category_id }}"
+      />
+    </view>
+  <!-- <view class="divider"/> -->
+  <view class="{{ address === '' ? 'none' : 'address-block' }} {{ hide }}">
+    <Address location="{{ location }}" bind:dismiss="hide" bind:didi="didi"/>
+  </view>
+</view>
+
+<view class="page" wx:if="{{ loaded }}" wx:if="{{ type === 'school'}}">
+  <view class="swiper-wrapper2">
+    <view class="logo-block2">
+      <image
+        src="{{ location.logo }}"
+        class="logo2"
+        mode="widthFix"
+      />
+    </view>
+      <!-- <image
+        wx:if="{{ type2 === 'school' }}"
+        src="{{ location.logo }}"
+        class="slide-image2"
+        mode="aspectFill"
+      /> -->
+  </view>
+    <view class="first-row">
+    <text class="head-title">
+      {{ title }}
+    </text>
+    <!-- <button bindtap="sharePoster">SHARE shit</button> -->
+    <view class="info">
+      <text class="text-info" wx:if="{{ location.address }}">
+        {{ location.address }}
+      </text>
+      <text class="text-info end" wx:if="{{ location.latitude }}">
+        {{ distance }} {{ lang === 'en' ? ' Km' : ' 千米'}}
+      </text>
+    </view>
+    <view class="info-block">
+      <text class="text" wx:if="{{ location.mon_sat != '-' }}">
+        {{ location.mon_sat }}
+      </text>
+      <view class="icon-block {{ location.mon_sat != '-' ? '' : 'no-time'}}">
+      <image
+        class="icon"
+        src="/image/phone.svg"
+        bindtap="makeCall"
+        wx:if="{{ location.telephone != 'none' }}"
+      />
+      <image
+        class="icon"
+        src="/image/wechat.svg"
+        bindtap="showWechat"
+        wx:if="{{ location.wechat }}"
+      />
+      <image
+        class="icon"
+        src="/image/taxi.svg"
+        bindtap="showTaxi"
+        wx:if="{{ location.address }}"
+      />
+      </view>
+    </view>
+  </view>
+  <!-- <view class="divider"/> -->
+  <view class="fourth-row" wx:if="{{ location.address }}">
+      <map
+        bindtap="openMap"
+        id="map"
+        longitude="{{ location.longitude }}"
+        latitude="{{ location.latitude }}"
+        scale="14"
+        bindcontroltap="controltap"
+        markers="{{ markers }}"
+        bindmarkertap="markertap"
+        polyline="{{polyline}}"
+        bindregionchange="regionchange"
+        show-location
+        style="width: 85%;margin:auto; height: 180px;"
+      >
+      </map>
+  </view>
+  <view class="second-row" wx:if="{{ location.content }}" >
+    <text class="sub-title">
+      {{ lang === 'en' ? 'Description' : '简介'}}
+    </text>
+    <text class="description">
+    {{ content }}
+   </text>
+  </view>
+  <!-- <view class="divider"/> -->
+  <view class="third-row" wx:if="{{ location.image_gallery != 'N;'}}">
+    <text class="sub-title">
+      {{ lang === 'en' ? 'About' : '亮点'}}
+    </text>
+    <view class="photo-block">
+      <block wx:for="{{ photos250 }}" wx:key="key">
+        <image
+          src="{{ item }}"
+          class="photo"
+          mode="widthFix"
+          bindtap="preview"
+        />
+      </block>
+    </view>
+  </view>
+  <view class="fifth-row" wx:if="{{ location.school_notice }}">
+    <text class="sub-title">
+      {{ lang === 'en' ? 'Notice' : '通知'}}
+    </text>
+    <text class="notice-title">
+    {{ location.school_notice }}.
+   </text>
+    <text class="notice-description">
+    {{ school_description }}
+   </text>
+  </view>
+  <!-- <view class="divider"/> -->
+  <view class="{{ address === '' ? 'none' : 'address-block' }} {{ hide }}">
+    <Address location="{{ location }}" bind:dismiss="hide" bind:didi="didi"/>
+  </view>
+  <!-- <view class="first-row">
+    <text class="head-title">
+      {{ location.title }}
+    </text>
+    <view class="info">
+      <text class="text-info" wx:if="{{ location.address }}">
+        {{ location.address }}
+      </text>
+    </view>
+    <view class="info-block">
+      <text class="text" wx:if="{{ location.wechat != '-' }}">
+        WeChat: {{ location.wechat }}
+      </text>
+      <view class="icon-block">
+      <image
+        class="icon"
+        src="/image/phone.svg"
+        bindtap="makeCall"
+        wx:if="{{ location.telephone != 'none' }}"
+      />
+      <image
+        class="icon"
+        src="/image/taxi.svg"
+        bindtap="showTaxi"
+        wx:if="{{ location.address }}"
+      />
+      </view>
+    </view>
+</view>
+<view class="second-row" wx:if="{{ location.content }}" >
+  <text class="title">
+    {{ lang === 'en' ? 'Descrition' : '简介'}}
+  </text>
+  <text class="description">
+  {{ content }}
+ </text>
+</view>
+
+<view class="fourth-row" wx:if="{{ location.address }}">
+    <map
+      bindtap="openMap"
+      id="map"
+      longitude="{{ location.longitude }}"
+      latitude="{{ location.latitude }}"
+      scale="14"
+      controls="{{controls}}"
+      bindcontroltap="controltap"
+      markers="{{ markers }}"
+      bindmarkertap="markertap"
+      polyline="{{polyline}}"
+      bindregionchange="regionchange"
+      show-location
+      style="width: 90%;margin:auto; height: 180px;"
+    >
+    </map>
+</view>
+<view class="info-travel-wrapper2">
+  <view class="photo-block">
+    <block wx:for="{{ photos }}" wx:key="key">
+      <image
+        src="{{ item }}"
+        class="photo"
+        mode="widthFix"
+        bindtap="preview"
+      />
+    </block>
+  </view>
+</view> -->
+</view>

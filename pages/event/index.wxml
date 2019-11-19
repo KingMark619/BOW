@@ -1,0 +1,151 @@
+<!--pages/event/index.wxml-->
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image 
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<view
+  class="header-icons"
+  style="margin-top:{{statusBar - 20}}px"
+>
+  <view>
+    <image
+      src="/image/back.svg"
+      mode="widthFix"
+      class="back-icon"
+      bindtap="goback"
+    />
+  </view>
+  <view class="divider" />
+  <view>
+    <image
+      src="/image/home.svg"
+      mode="widthFix"
+      class="home-icon"
+      bindtap="onHome"
+    />
+  </view>
+</view>
+<view class="page" wx:if="{{ loaded }}">
+  <!-- <view class="under-layer">
+    <image
+      src="https://mmbiz.qpic.cn/mmbiz_jpg/QxNa0LsqWl48Z4fAzkB3bjTia6APeiast07zxjV5Y5QWfxMR0T65xuVFRrDAvRyIKUIuWia9iarJznB93zNGmFE8OA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1"
+      mode="widthFit"
+      class="poster-image"
+    />
+  </view> -->
+  <view class="over-layer">
+    <view class="first-block">
+      <view class="image-top">
+        <image
+          src="{{ mainImage }}"
+          mode="widthFix"
+          class="poster-image"
+          bindtap="previewMain"
+        />
+      </view>
+      <view class="block-on-picture">
+        <view class="header-title-tag">
+          <text class="tag"> Party at </text>
+          <text class="event-title"> {{ title }}</text>
+        </view>
+        <view class="details">
+          <view class="time-price-block">
+            <text class="time" wx:if="{{ event.start_date }}">{{ event.start_date }} </text>
+            <text class="time" wx:if="{{ event.price }}">¥ {{ event.price }} </text>
+          </view>
+          <view class="more-details">
+            <view class="more-button" data-id="id" bindtap="changescroll">
+             <text class="more-text">
+              {{ lang === 'en' ? 'MORE DETAILS →' : '更多信息 →'}}
+             </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- <view class="head-block">
+      <view class="title-block">
+        <text class="title">
+        {{ title }} 
+        </text>
+        <text class="price" wx:if="{{ event.price }}">
+        ¥ {{ event.price }}
+        </text>
+      </view>
+      <text wx:if="{{ event.start_date }}" class="caption">
+      {{ lang === 'en' ? 'from' : '从'}}<text class="caption black">{{ event.start_date }}</text> {{ lang === 'en' ? 'to' : '到'}}<text class="caption black">{{ event.end_date }}</text>
+      </text>
+      <navigator class="caption red" url="/pages/merchant/detail/index?id={{ location.listing_id}}&type=normal&type2=normal">
+      @ {{ locTitle }}
+      </navigator>
+    </view> -->
+    <view class="content-block" wx:if="{{ event.content }}">
+      <text class="content">
+        {{ content }}
+      </text>
+    </view>
+    <view class="title-row">
+      <view class="title-row-text">{{ lang === 'en' ? 'About' : '亮点'}}       </view>
+      <view class="title-row-text red">{{ locTitle }}</view>
+    </view>
+  <!-- iugug  kjgyshdjfkguludyttjfukg -->
+    <view class="photo-block">
+      <block class="about-block"  wx:for="{{ markers.image }}" wx:key="key">
+        <view class="high-block">
+            <view class="high-title">
+        {{ lang === 'en' ? markers.title[index][0] : markers.title[index][1] }}
+            </view>
+            <view class="high-caption">
+         {{ lang === 'en' ? markers.description[index][0] : markers.description[index][1] }}
+            </view>
+          </view>
+        
+        <view class="image-block">
+          <image
+            src="{{ markers.image[index] }}"
+            class="highlight-image"
+            mode="widthFix"
+            bindtap="preview"
+            data-index="{{ markers.image[index] }}"
+          />
+        </view>
+      </block>
+    </view>
+<!-- iugug  kjgyshdjfkguludyttjfukg -->
+    <!-- <view class="highlight-block">
+      <view class="high-block" wx:for="{{ markers.image }}" wx:key="key">
+        <view class="high-text-block">
+          <text class="high-title">
+          {{ lang === 'en' ? markers.title[index][0] : markers.title[index][1] }}
+        </text>
+        <text class="high-caption">
+          {{ lang === 'en' ? markers.description[index][0] : markers.description[index][1] }}
+        </text>
+        </view>
+        <view class="image-block">
+          <image
+          src="{{ markers.image[index] }}"
+          mode="widthFix"
+          class="highlight-image"
+          bindtap="preview"
+        />
+        </view>
+        
+      </view>
+    </view> -->
+
+
+    <!-- <view class="title-row">
+      <view class="title-row-text">{{ lang === 'en' ? 'More Events' : '更多活动'}} </view>
+    </view>
+    <view class="more-event-block">
+      <MORE-EVENTS
+      
+      />
+    </view> -->
+  </view>
+</view>

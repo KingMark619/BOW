@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "China Students Travel",
+    "usingComponents": {
+      "TRAVEL-POSTER": "/component/travelPoster/index",
+      "TRAVEL-CARD": "/component/travelCard/index"
+    }
+}

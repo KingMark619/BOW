@@ -1,0 +1,22 @@
+<view class="fui-page-group statusbar">
+  <view class="fui-page page-merch-list fui-page-current" id="fui-page-1530511792546">
+    <view class="fui-content" style="bottom: 2.4rem">
+      
+      <view style='margin-top:0;border-top:1px solid #ccc;' class="fui-cell-group qa-title">
+        <view class="fui-cell">
+          <view class="fui-cell-text">All Categories</view>
+        </view>
+      </view>
+      <view class="fui-icon-group col-4 noborder">
+        <block wx:for="{{classList}}">
+          <navigator class="fui-icon-col external" url='../allmerchant/index?titleIndex={{index}}&cate_id={{item.id}}'>
+            <view class="icon">
+              <image style='width: 88rpx; height: 88rpx;' src="{{item.thumb}}"></image>
+            </view>
+            <view class="text">{{item.catename}}</view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

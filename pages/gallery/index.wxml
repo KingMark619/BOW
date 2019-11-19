@@ -1,0 +1,39 @@
+<!--pages/gallery/index.wxml-->
+<view class="page">
+  <view
+  class="header-icons"
+  style="margin-top:{{statusBar - 20}}px"
+  >
+  <view>
+    <image
+      src="/image/back.svg"
+      mode="widthFix"
+      class="back-icon"
+      bindtap="goback"
+    />
+  </view>
+  <view class="divider" />
+  <view>
+    <image
+      src="/image/home.svg"
+      mode="widthFix"
+      class="home-icon"
+      bindtap="onHome"
+    />
+  </view>
+  </view>
+  <view class="title">
+    {{ title }}
+  </view>
+  <view class="picture-block">
+    <block wx:for="{{ photos }}" wx:key="key">
+      <image
+        class="picture"
+        mode="aspectFill"
+        src="{{ item }}"
+        bindtap="preview"
+        data-index="{{ item }}"
+      />
+    </block>
+  </view>
+</view>

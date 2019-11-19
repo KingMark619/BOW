@@ -1,0 +1,18 @@
+<!--component/travelCard/index.wxml-->
+<view class="block" bindtap="navigate">
+  <view class="top">
+    <image
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Chef%27s_table_at_Marcus.jpg/170px-Chef%27s_table_at_Marcus.jpg"
+      class="poster"
+      mode="aspectFill"  
+    />
+  </view>
+  <view class="bottom">
+    <text class="name">
+      {{ name }}
+    </text>
+    <text class="price">
+      {{ price }}
+    </text>
+  </view>
+</view>

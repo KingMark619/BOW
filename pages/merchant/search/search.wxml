@@ -1,0 +1,60 @@
+<!--pages/merchant/search/search.wxml-->
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image 
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<view class="page" wx:if="{{ loaded }}">
+<view class="input-block">
+  <input
+    type="text"
+    class="input"
+    placeholder="Search"
+    placeholder-class="placeholder"
+    confirm-type="search"
+    maxlength="60"
+    focus="true"
+    bindinput=""
+    bindconfirm="test"
+  />
+  <image
+    src="/image/cancel.svg"
+    class="cancelIcon"
+    bindtap="clear"
+    data-action="close"
+  />
+</view>
+<view class="result" wx:if="{{ searchOkay }}">
+    <name-card
+      location="{{ searchResults }}"
+    />
+</view>
+<view class="noResult" wx:if="{{ noResult }}" >
+  <text class="title">LOCATION NOT FOUND \n</text>
+  <text bindtap="addListing" class="title link">CREATE LOCATION FOR FREE</text>
+</view>
+<view 
+  wx:if="{{ searchOpen }}"
+  class="suggestion-container"
+  wx:for="{{ suggestions }}"
+  wx:key="{{ index }}"
+>
+  <view
+    bindtap="suggestionTap"
+    data-a_id="{{ item.amap_id }}"
+    data-l_id="{{ item.location_id }}"
+    class="search-results"
+  >
+    <text class="distance"> {{ item.distance }} </text>
+    <view class="first-row-left">
+      <text class="title"> {{ item.name }} </text>
+    </view>
+    <view class="second-row">
+      <view class="caption"> {{ item.address }} </view>
+    </view>
+  </view>
+</view>
+</view>
+

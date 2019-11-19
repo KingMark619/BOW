@@ -1,0 +1,97 @@
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image 
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<!-- add new header -->
+<view class="header-block">
+  <text class="header-text">CHINA STUDENTS TRAVEL</text>
+</view>
+<!-- end new header -->
+<view class="page" wx:if="{{ loaded }}">
+  <view class="input-block">
+    <!-- <input
+      type="text"
+      class="input"
+      bindfocus="search"
+      placeholder="Search"
+      placeholder-class="placeholder"
+      confirm-type="search"
+    /> -->
+  </view>
+  <!-- <view class="title-row">
+    <view class="title">CHINA STUDENTS TRAVEL</view>
+  </view> -->
+  <view class="content-block">
+    <view class="first-row">
+
+    <block wx:for="{{ travel }}" wx:key="key"> 
+      <view class="top-block">
+      <navigator class="block" url="/pages/article/index?url={{ item.content }}"> 
+      <view class="travel" >
+        <view class="top">
+          <image
+            src="{{ item.image }}" 
+            class="poster"
+            mode="aspectFill"  
+          />
+        </view>
+          <view class="bottom">
+            <text class="name">
+               {{ item.title }} 
+            </text>
+            <!-- <text class="price">
+               {{ item.price }} 
+            </text> -->
+          </view>
+        </view>
+        </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="bottom-row">
+      <view class="bottom-bar">
+        <view class="iconBlock" bindtap="goToIndex">
+          <image
+            src="/image/house-1.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToIndex"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Home' : '首页'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToRec">
+          <image
+            src="/image/tab-bar/favourites.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToRec"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Recommended' : '推荐'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToTravel">
+          <image
+            src="/image/tab-bar/map.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToTravel"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Travel' : '旅游'}}
+          </text>
+        </view>
+      </view>
+    </view>
+  <!-- <view class="slider-block">
+    <TRAVEL-POSTER
+      destination="{{ hotDest }}"
+    />
+  </view> -->
+</view>

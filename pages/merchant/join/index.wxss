@@ -1,0 +1,49 @@
+/* pages/merchant/join/index.wxss */
+.page {
+  margin: 70px 0 !important
+}
+.header-block {
+  margin-top: -70px;
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.input-block {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.input {
+  width: 90%;
+  height: 40px;
+  border-radius: 12px;
+  margin: auto;
+  padding: 0 15px;
+  border: 1px solid #f7f7f7;
+}
+.placeholder {
+  font-size: 12px;
+  color: gray;
+  letter-spacing: 0.2px;
+}
+.slider-block {
+  width: 100%;
+  height: auto;
+  margin: 15px 0%;
+}
+.swiper {
+  height: 200px;
+  width: 97%;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px lightgray;
+}
+.swiper-item,
+.swiper-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}

@@ -1,0 +1,24 @@
+<!--component/address/index.wxml-->
+<view class="block">
+  <view class="title-row">
+    <text class="title"> {{ location.address }} </text>
+  </view>
+  <view class="button-row">
+  <view class="dismiss">
+    <image
+      src="/image/close.svg" 
+      mode="widthFix"
+      class="icon"
+      bindtap="dismiss"
+    />
+  </view>
+  <navigator class="didi" target="miniProgram" open-type="navigate" app-id="wxaf35009675aa0b2a">
+    <image
+      src="/image/didi.svg"
+      mode="widthFix"
+      class="didi-icon"
+      bindtap="didi"
+    />
+  </navigator>
+  </view>
+</view>

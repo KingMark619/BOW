@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "老外来了- BEST OF WUHAN",
+  "usingComponents": {
+    "Name-Card" : "/component/nameCard/index"
+  }
+}

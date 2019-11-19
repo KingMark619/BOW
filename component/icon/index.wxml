@@ -1,0 +1,128 @@
+<!--component/icon/index.wxml-->
+<view class="icon-block">
+    <view class="row">
+      <view class="icon one {{ filter }}">
+        <image
+          src="/image/house-icon/wifi.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          WIFI
+        </text>
+      </view>
+      <view class="icon two {{ filter }}">
+        <image
+          src="/image/house-icon/bed.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          BED
+        </text>
+      </view>
+      <view class="icon three {{ filter }}">
+        <image
+          src="/image/house-icon/closet.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          CLOSET
+        </text>
+      </view>
+      <view class="icon four {{ filter }}">
+        <image
+          src="/image/house-icon/fridge.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          FRIDGE
+        </text>
+      </view>
+      <view class="icon five filter">
+        <image
+          src="/image/house-icon/heater.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          HEATER
+        </text>
+      </view>
+      <view class="icon six {{ filter }}">
+        <image
+          src="/image/house-icon/sofa.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          SOFA
+        </text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="icon one {{ filter }}">
+        <image
+          src="/image/house-icon/air-conditioner.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          AC
+        </text>
+      </view>
+      <view class="icon two filter">
+        <image
+          src="/image/house-icon/washing-machine.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          WASHING-MACHINE
+        </text>
+      </view>
+      <view class="icon three filter">
+        <image
+          src="/image/house-icon/building.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          FLOOR
+        </text>
+      </view>
+      <view class="icon four {{ filter }}">
+        <image
+          src="/image/house-icon/elevator.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          ELEVATOR
+        </text>
+      </view>
+      <view class="icon five filter">
+        <image
+          src="/image/house-icon/television.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          TV
+        </text>
+      </view>
+      <view class="icon six {{ filter }}">
+        <image
+          src="/image/house-icon/toilet.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          TOILET
+        </text>
+    </view>
+  </view>
+</view>
+  

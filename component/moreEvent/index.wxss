@@ -1,0 +1,75 @@
+/* component/moreEvent/index.wxss */
+.block-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  box-sizing: border-box;
+  transition: transform 500ms;
+  border-radius: 5px;
+  overflow-y: hidden;
+}
+.block-nav:active {
+  transform: scale(0.95);
+  box-shadow: unset;
+}
+.top-row {
+  height: auto;
+  padding-top: 10px;
+}
+.mid-row {
+  padding-left: 5px;
+}
+.bottom {
+  padding-bottom: 10px;
+  /* display: flex;
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 5px 5px 10px;
+  height: 75px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px; */
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ff4c4c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  letter-spacing: 1.2px;
+}
+.category {
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+.top-block {
+  width: 160px;
+  margin: 0 10px;
+  height: auto;
+}
+.block {
+  margin: 15px 0;
+  padding: 15px 0;
+  width: auto;
+  /* height: 300px; */
+  flex-direction: row;
+  overflow-y: scroll;
+    display: inline-flex;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scroll-behavior: smooth;
+}

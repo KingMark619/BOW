@@ -1,0 +1,62 @@
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image 
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<!-- header icon above -->
+<view class="header-block">
+  <text class="header-text">BEST OF WUHAN</text>
+</view>
+<view
+  class="header-icons"
+  style="margin-top:{{statusBar - 20}}px"
+>
+  <view>
+    <image
+      src="/image/back.svg"
+      mode="widthFix"
+      class="back-icon"
+      bindtap="goback"
+    />
+  </view>
+  <view class="divider" />
+  <view>
+    <image
+      src="/image/home.svg"
+      mode="widthFix"
+      class="home-icon"
+      bindtap="onHome"
+    />
+  </view>
+</view>
+<!-- end new header -->
+<view class="page" wx:if="{{ loaded }}">
+      <view class="input-block">
+        <input
+          type="text"
+          class="input"
+          placeholder="{{ lang === 'en' ? 'Search' : '搜索'}}"
+          placeholder-class="placeholder"
+          confirm-type="search"
+          bindfocus="navigate"
+          />
+      </view>
+      <view>
+        <block wx:for="{{ location }}" wx:key="key">
+          <Name-Card
+            location="{{ item }}"
+            type="{{ type }}"
+            title="{{ title[index] }}"
+            catId="{{ id }}"
+          />
+        </block>
+      </view>
+</view>
+<!-- <iframe
+  height="0"
+  width="0"
+  src="https://api.map.baidu.com/res/staticPages/location.html?timeout=5000&amp;maximumAge=600000"
+  style="border-width: 0px;"
+/> -->

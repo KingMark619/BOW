@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "SCHOOL NEWS",
+  "usingComponents": {
+    "INFO-TRAVEL": "/component/infoTravel/index"
+  }
+}

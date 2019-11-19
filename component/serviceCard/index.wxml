@@ -1,0 +1,77 @@
+<!--component/serviceCard/index.wxml-->
+<view class="block">
+  <navigator class="top-row" url='/pages/article/index?url=https://mp.weixin.qq.com/s/G8gcjkrFKgwzR7VCxAlq5A'>
+    <view class="left-col">
+      <text class="main-title-black">
+        {{ mainTitle }}
+      </text>
+      <text class="main-title-gray">
+        {{ mainCaption }}
+      </text>
+    </view>
+    <view class="right-col">
+      <image
+        src="{{ mainPoster }}"
+        class="main-poster"
+        mode="aspectFill"
+      />
+    </view>
+  </navigator>
+  <!-- end of top row -->
+  <!-- <navigator class="bottom-row" url="/pages/article/index?url=https://mp.weixin.qq.com/s/G8gcjkrFKgwzR7VCxAlq5A">
+    <view class="left-side" bindtap="nav-left">
+      <view class="left-column">
+        <text class="sec-title-black">
+          {{ leftTitle }}
+        </text>
+        <text class="sec-title-gray">
+          {{ leftCaption }}
+        </text>
+      </view>
+      <view class="right-column">
+        <image
+          src="{{ leftPoster }}"
+          class="sec-poster"
+          mode="aspectFill"
+        />
+      </view>
+    </view> -->
+  
+    <!-- end of left side -->
+  <!-- <view class="right-side" bindtap="nav-right">
+    <view class="left-column">
+      <text class="sec-title-black">
+        {{ rightTitle }}
+      </text>
+      <text class="sec-title-gray">
+        {{ rightCaption }}
+      </text>
+    </view>
+    <view class="right-column">
+      <image
+        src="{{ rightPoster }}"
+        class="sec-poster"
+        mode="aspectFill"
+      />
+    </view>
+  </view>
+  </navigator> -->
+  <!-- bottom row -->
+  <navigator class="last-row" url="/pages/article/index?url=https://mp.weixin.qq.com/s/qF-OqewTbe-kar3lOHD69w">
+    <view class="left-col">
+      <text class="main-title-black-last">
+        WUHAN COMEDY CLUB
+      </text>
+      <text class="main-title-gray-last">
+        LOVE,LAUGH & CHEAP BEER
+      </text>
+    </view>
+    <view class="right-col">
+      <image
+        src="/image/comedy-logo.jpeg "
+        class="main-poster"
+        mode="aspectFill"
+      />
+    </view>
+  </navigator>
+</view>

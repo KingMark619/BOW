@@ -1,0 +1,30 @@
+<!--component/nearLocation/index.wxml-->
+<scroll-view
+  scroll-x
+>
+<view class="block">
+    <block wx:for="{{ location }}" wx:key="key">
+      <view class="top-block">
+      <navigator class="block-nav" url="/pages/merchant/detail/index?id={{ item.listing_id }}&type={{ type ? 'normal' : 'school' }}&logo={{ item.logo }}&catId={{ catId }}">
+      
+        <view class="top">
+          <image
+            src="{{ item.logo }}"
+            class="poster"
+            mode="aspectFill"
+          />
+        </view>
+          <view class="bottom">
+            <text class="name">
+               {{ item.title }}
+            </text>
+            <!-- <text class="price">
+               {{ item.start_date }}
+            </text> -->
+          </view>
+       
+        </navigator>
+        </view>
+      </block>
+    </view>
+</scroll-view>

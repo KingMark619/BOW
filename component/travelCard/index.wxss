@@ -1,0 +1,46 @@
+/* component/travelCard/index.wxss */
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: auto;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px lightgray;
+  transition: transform 500ms;
+  border-radius: 12px;
+  overflow-y: hidden;
+}
+.block:active {
+  transform: scale(0.95);
+  box-shadow: unset;
+}
+.top {
+  height: auto;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 5px 5px 5px;
+  height: 70px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.poster {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 150px;
+  width: 100%;
+}
+.name {
+  font-size: 15px;
+  font-weight: 800;
+  color: black;
+  margin-top: -10px;
+}
+.price {
+  font-size: 12px;
+  font-weight: 400;
+  color: red;
+  margin-top: -5px;
+}

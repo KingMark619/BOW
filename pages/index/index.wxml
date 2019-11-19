@@ -1,0 +1,274 @@
+<view class="curtain-block {{ loaded }}" wx:if="{{ curtain }}">
+    <image
+      src="/image/loading.gif"
+      mode="widthFix"
+      class="curtain-image"
+    />
+</view>
+<!-- add new header -->
+<view class="header-block">
+  <text class="header-text">BEST OF WUHAN</text>
+</view>
+<!-- end new header -->
+<view class="page" wx:if="{{ loaded }}">
+  <!-- <view class="input-block">
+    <input
+      type="text"
+      class="input"
+      placeholder="Search"
+      placeholder-class="placeholder"
+      confirm-type="search"
+    />
+  </view> -->
+  <view class="slider-block">
+    <swiper
+      class="swiper"
+      indicator-dots="{{ indicatorDots }}"
+      autoplay="{{ autoplay }}"
+      interval="{{ interval }}"
+      duration="{{ duration }}">
+      <block wx:for="{{ realEvent }}" wx:key="key">
+      <swiper-item class="swiper-item">
+        <navigator class="swiper-image" url="../../pages/event/index?id={{ item.event_id }}&trending={{ trending? false: true}}">
+        <image
+          src="{{ item.poster_url }}"
+          class="swiper-image"
+          mode="aspectFill"
+        />
+        </navigator>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="icon-block">
+    <view class="row">
+      <view class="icon one" bindtap="openCategory1">
+        <image
+          src="/image/safari.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'DISCOVER' : '发现武汉' }}
+        </text>
+      </view>
+      <view class="icon two" bindtap="openCategory2">
+        <image
+          src="/image/food.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'FOOD & DINING' : '饮食' }}
+        </text>
+      </view>
+      <view class="icon three" bindtap="openCategory3">
+        <image
+          src="/image/cocktail.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'COCKTAIL BAR' : '鸡尾酒吧' }}
+        </text>
+      </view>
+      <view class="icon four" bindtap="openCategory4">
+        <image
+          src="/image/cafe.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'COFFEE SHOP' : '咖啡店' }}
+        </text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="icon one" bindtap="openCategory5">
+        <image
+          src="/image/education.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'EDUCATION' : '教育' }}
+        </text>
+      </view>
+      <view class="icon two" bindtap="openCategory6">
+        <image
+          src="/image/night.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'NIGHTLIFE' : '夜生活' }}
+        </text>
+      </view>
+      <view class="icon three" bindtap="openCategory7">
+        <image
+          src="/image/hospital.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'HEALTH & MED' : '医疗' }}
+        </text>
+      </view>
+      <view class="icon four" bindtap="openCategory8">
+        <image
+          src="/image/cityscape.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'HOUSING' : '租房' }}
+        </text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="icon one" bindtap="openCategory9">
+        <image
+          src="/image/police.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'PUBLIC SERVICE' : '政务' }}
+        </text>
+      </view>
+      <view class="icon two" bindtap="openCategory10">
+        <image
+          src="/image/sports.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'SPORTS' : '运动' }}
+        </text>
+      </view>
+      <view class="icon three" bindtap="openCategory11">
+        <image
+          src="/image/jobs.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'JOBS' : '招聘' }}
+        </text>
+      </view>
+      <view class="icon four" bindtap="openCategory12">
+        <image
+          src="/image/news.svg"
+          mode="widthFix"
+          class="icon-image"
+        />
+        <text class="icon-text">
+          {{ lang === 'en' ? 'SCHOOL NOTICE' : '学校通知' }}
+        </text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="title-row">
+  <view class="title">OUR SERVICES</view>
+</view> -->
+<view class="add-row">
+  <!-- <image
+    src="/image/plus.svg"
+    mode="widthFix"
+    class="plus-icon"
+    bindtap="addListing"
+  /> -->
+</view>
+<!-- <view class="service-card">
+    <SERVICE-CARD
+      mainTitle="老外来了"
+      mainCaption="BEST OF WUHAN"
+      bind:nav-top="goToOa"
+      mainPoster="https://mmbiz.qpic.cn/mmbiz_gif/AxDUaj0Q50BrQ0faqXGnCXHwyiauvMcYoiaQ58siaOQdvYPibwnJXkHq1EOWzcr323H0fAxfquFiaxlZgmLlhXwjuEw/640?wx_fmt=gif&wxfrom=5&wx_lazy=1"
+      leftTitle="EDUCATION AND CONSULTING"
+      leftCaption="RESTAURANT AND CATERING"
+      bind:nav-left="goToOa"
+      leftPoster="/image/logo.png"
+      rightTitle="CHINA STUDENTS TRAVEL"
+      rightCaption="COMPANY REGISTRATION"
+      bind:nav-right="goToOa"
+      bind:nav-low="goToClub"
+      rightPoster="/image/logo.png"
+    />
+  </view> -->
+<view class="title-row" wx:if="{{ ads }}">
+  <view class="title">{{ lang === 'en' ? 'HOT IN WUHAN' : '热门活动' }}</view>
+</view>
+  <view
+    class="travel-poster"
+  >
+    <TRAVEL-POSTER
+      lang="{{ lang }}"
+      event="{{ realAds }}"
+      title="{{ title }}"
+      trending="{{ trending }}"
+    />
+  </view>
+<view class="title-row">
+  <view class="title">{{ lang === 'en' ? 'RECOMMENDED READ' : '推荐阅读' }}</view>
+</view>
+  <view class="first-rowoa">
+    <block wx:for="{{ article }}" wx:key="key">
+      <view class="top-blockoa">
+      <navigator class="blockoa" url="/pages/article/index?url={{ item.content }}">
+      <view class="" >
+        <view class="topoa">
+          <image
+            src="{{ item.image }}"
+            class="posteroa"
+            mode="aspectFill"
+          />
+        </view>
+          <view class="bottomoa">
+            <text class="nameoa">
+               {{ item.title }}
+            </text>
+          </view>
+        </view>
+        </navigator>
+        </view>
+      </block>
+    </view>
+    <view class="bottom-row">
+      <view class="bottom-bar">
+        <view class="iconBlock" bindtap="goToIndex">
+          <image
+            src="/image/house-1.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToIndex"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Home' : '首页'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToRec">
+          <image
+            src="/image/tab-bar/favourites.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToRec"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Recommended' : '推荐'}}
+          </text>
+        </view>
+        <view class="iconBlock" bindtap="goToTravel">
+          <image
+            src="/image/tab-bar/map.svg"
+            mode="widthFit"
+            class="bottom-icon"
+            bindtap="goToTravel"
+          />
+          <text class="bottom-text">
+            {{ lang === 'en'? 'Travel' : '旅游'}}
+          </text>
+        </view>
+      </view>
+    </view>
+</view>

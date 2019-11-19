@@ -1,0 +1,81 @@
+/* component/infoTravel/index.wxss */
+.block {
+  background-color: white;
+  padding: 0 5px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.border {
+  border-bottom: 2px dashed #f7f7f7;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+.title-row {
+  display: block;
+  margin-bottom: 15px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.title:before, .title:after {
+  border-top: 2px solid #ff4c4c;
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.7em;
+  width: 45%;
+}
+
+.title:before {
+  right: 3%;
+}
+
+.title:after {
+  left: 3%;
+}
+.red-dot {
+  color: #ff4c4c;
+}
+.highlight-row {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-bottom: 15px;
+}
+.highlight-head {
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+}
+.highlight-content {
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+}
+.text-row {
+  display: block;
+  padding: 0 10px 10px 10px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+  
+}
+.text {
+  text-align: left;
+  color: gray;
+  font-weight: 300;
+  font-size: 20px;
+}

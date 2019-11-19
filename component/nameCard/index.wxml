@@ -1,0 +1,44 @@
+<!--component/nameCard/index.wxml-->
+<navigator url="/pages/merchant/detail/index?id={{ location.listing_id }}&type={{ type ? 'normal' : 'school' }}&logo={{ location.logo }}&catId={{ catId }}">
+<view
+  class="block"
+  bindtap="navigate"
+>
+  <view class="left-side">
+    <image
+      src="{{ location.logo != '' ? [location.logo] : '../../image/logo.png' }}"
+      class="poster-image"
+      mode="aspectFill"
+    />
+  </view>
+  <view class="right-side">
+    <text class="title">{{ title }}</text>
+    <view
+      wx:if="{{ follow }}"
+      class="red-icon-row"
+      bindtap="follow"
+    >
+      <image
+        src="../../image/hot.png"
+        class="red-icon"
+        mode="aspectFill"
+      />
+    </view>
+    <view class="time-row" wx:if="{{ location.mon_sat != '-' }}">
+      <image
+        src="../../image/clock.svg"
+        class="clock-icon"
+      />
+      <text class="time">{{ location.mon_sat }}</text>
+      </view>
+    <view class="address-row">
+      <image
+        src="../../image/pin.svg"
+        class="pin-icon"
+      />
+      <text class="address">{{ location.address }}</text>
+    </view>
+  </view>
+</view> 
+</navigator>
+

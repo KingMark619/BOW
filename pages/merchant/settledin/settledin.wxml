@@ -1,0 +1,87 @@
+<!-- <loading wx:if="{{!show}}">Loading...</loading> -->
+<view wx:if="{{ispass==false}}" class="page navbar"  style='background:#fff'>
+  <view style="overflow: hidden;height: 100px;position: relative;background: #fff">
+    <view class="headinfo" style="border: none;z-index: 100">
+      <view class='face'>
+        <image src='{{img}}'></image>
+      </view> 
+    </view>
+  </view>
+  <view wx:if="{{issubmit==true}}" class="tip">
+    <view>You have submitted the information, please wait for us to contact you!</view>
+    <view>You can also modify the information and resubmit it.</view>
+  </view>
+  <view class='form'>
+    <view style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Merchname,Main</p>
+      <input value='{{shop.merchname}}' data-type="name" bindinput="onChange"></input>
+    </view>
+   <view style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Main businessname</p>
+      <input value='{{shop.salecate}}' data-type="businessname" bindinput="onChange"></input>
+    </view>
+    <view style='width:100%;margin-top:10px;clear:both;overflow:hidden;margin-bottom:10px'>
+    <p>Brief introduction</p>
+    <input style="height:80px;" value='{{shop.desc}}' data-type="introduction" bindinput="onChange"></input>
+    </view>
+    <view style='position:relative;'>
+      <view class='wid30'>
+        <p style="padding-bottom:5px">City</p>
+        <input value='{{shop.city}}' data-type="city" bindinput="onChange"></input>
+      </view>
+      <view class='wid70' style='margin-left:10px'>
+        <p style="padding-bottom:5px">Emails</p>
+        <input value='{{shop.email}}' data-type="email" bindinput="onChange"></input>
+      </view>
+    </view>
+    <view style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Wechat ID</p>
+      <input value='{{shop.weixin}}' bindinput="onChange" data-type="weixin"></input>
+    </view>
+    <view style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Realname</p>
+      <input value='{{shop.realname}}' data-type="realname" bindinput="onChange"></input>
+    </view>
+    <view style='width:100%;margin-top:10px;clear:both;overflow:hidden;margin-bottom:10px'>
+    <p>Mobile</p>
+    <view style='position:relative;'>
+      <input style='padding-left:130rpx' value='{{shop.mobile}}' bindinput="onChange" data-type="mobile"></input>
+      <view style='position:absolute;left:0;top:10rpx;height:60rpx;line-height:60rpx;padding:0 10px;border-right:1px solid #8d8d8d;'>+86</view>
+    </view>
+    </view>
+    <view style='font-size:14px;color:#8D8D8D;padding:10px 0'>Please fill in the contact information carefully so that we can contact you</view>
+    <view wx:if="{{issubmit==false}}" style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Account</p>
+      <input value='{{shop.uname}}' data-type="contact" bindinput="onChange"></input>
+    </view>
+    <view wx:if="{{issubmit==false}}" style='width:100%' class='wid2 fl'>
+      <p style="padding-bottom:5px">Passworld</p>
+      <input value='' type='passworld' data-type="passworld" bindinput="onChange"></input>
+    </view>
+    <view  style='width:100%;margin-top:10px;font-size:30rpx;overflow:hidden;margin-bottom:10px'> 
+      <checkbox bindtap="checkboxChange" checked="{{checks}}"></checkbox>I read and learned about <text bindtap='showTip' style='color:blue'>"Adding rules"</text>    
+    </view>
+    <view wx:if="{{issubmit==false}}" data-id='0' style='margin:0.5em 0' bindtap="submit" class="btn btn-danger block mtop">Apply to join</view>
+    <view wx:if="{{issubmit==true}}" data-id='{{shop.id}}' style='margin:0.5em 0' bindtap="submit" class="btn btn-danger block mtop">Resubmitted</view>
+  </view>
+</view>
+<!-- 弹出框 -->
+  <view wx:if="{{istip==true}}" class="remark"></view>
+  <view wx:if="{{istip==true}}" class="popup">
+    <view class="popup-hd">{{applytitle}}</view>
+    <view class='popup-bd'>
+     {{applycontent}}
+    </view>
+    <view class="popup-ft">
+      <button bindtap='closeTip' class="popup-btn">Already read</button>
+    </view>
+  </view>
+  <!-- 审核通过 -->
+  <view wx:if="{{ispass==true}}" class="page navbar"  style='background:#fff'>
+    <view class='smail'>
+      <image src='/static/images/smail.png'></image>
+    </view>
+    <view class='pass'>PASS</view>
+    <!-- <web-view src="{{url}}"></web-view> -->
+    <view bindtap='pleaseLogin' class='loginbtn'>Please Login</view>
+  </view>

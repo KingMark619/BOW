@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#fafafa",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "老外来了- BEST OF WUHAN",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "MORE-EVENTS": "/component/moreEvent/index"
+  }
+}

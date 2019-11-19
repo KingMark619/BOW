@@ -1,0 +1,47 @@
+<!--component/travelPoster/index.wxml-->
+<scroll-view
+  scroll-x
+>
+<view class="block">
+    <block wx:for="{{ event }}" wx:key="key">
+      <view class="top-block">
+      <navigator class="block-nav" url="/pages/event/index?id={{ item.event_id }}&trending={{ trending? true : false}}">
+      
+        <view class="top">
+          <image
+            src="{{ item.poster_url }}"
+            class="poster"
+            mode="aspectFill"
+          />
+        </view>
+          <view class="bottom">
+            <text class="name">
+               {{ item.title }}
+            </text>
+            <text class="price">
+               {{ item.start_date }}
+            </text>
+          </view>
+       
+        </navigator>
+        </view>
+      </block>
+    </view>
+  <!-- <view class="scroll-layout" bindtap='goToTrip'>
+    <block
+      wx:for="{{ event }}"
+      wx:key="key"
+    >
+      <navigator url="/pages/event/index?id={{ item.event_id }}&trending={{ trending? true : false}}" class="block">
+        <image
+          src="{{ item.poster_url }}"
+          class="poster"
+          mode="aspectFill"
+        />
+        <text class="title">
+          {{ item.title }} 
+        </text>
+      </navigator>
+    </block>
+  </view> -->
+</scroll-view>

@@ -1,0 +1,160 @@
+<!--component/gallery/index.wxml-->
+<view class="gallery">
+  <view class="left-row">
+    <image
+      src="{{ photo[0] }}"
+      mode="widthFix"
+      class="main-picture"
+      bindtap="preview"
+    />
+  </view>
+  <!-- <view class="right-row">
+    <image
+      src="{{ photo[1] }}"
+      mode="widthFix"
+      class="picture"
+      bindtap="preview"
+    />
+    <view class="text-section" bindtap="more">
+      <text class="text">
+       +
+      </text>
+    </view>
+  </view> -->
+</view>
+<!-- <wxs src="set.wxs" module="SET" />
+<view class="gallery">
+  <view
+    class="tile-gallery"
+    style="{{ SET.setPadding(gSet['containerPadding']) }}"
+  >
+    <block
+      wx:for="{{ galleryData }}"
+      wx:key="{{ key }}"
+    >
+      <block wx:if="{{ item.type === 'two-by-two' }}">
+        <view
+          class="two-by-two"
+          id="{{ item['images'][0] }}"
+          bindtap="imageTapped"
+        >
+          <image
+            style="{{ SET.img2B2(gSet['img2B2HW'], gSet['mTop'], gSet['mBot']) }}"
+            mode="aspectFill"
+            lazy-load="{{ true }}"
+            src="{{ item['images'][0] + '?imageslim' }}"
+          />
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type === 'vertical-two-small' }}">
+        <view
+          class="vertical-lineup"
+          style="{{ SET.setHeight(gSet['img2B2HW']) }}"
+        >
+          <view
+            class="one-by-one"
+            id="{{ item['images'][0] }}"
+            bindtap="imageTapped"
+          >
+            <image
+              style="{{ SET.img1B1(gSet['img1B1HW'], gSet['mTop'], gSet['mBot']) }}"
+              mode="aspectFill"
+              lazy-load="{{ true }}"
+              src="{{ item['images'][0] + '?imageslim' }}"
+            />
+          </view>
+
+          <view
+            class="one-by-one"
+            id="{{ item['images'][1] }}"
+            bindtap="imageTapped"
+          >
+            <image
+              style="{{ SET.img1B1(gSet['img1B1HW'], gSet['mTop'], gSet['mBot']) }}"
+              mode="aspectFill"
+              lazy-load="{{ true }}"
+              src="{{ item['images'][1] + '?imageslim' }}"
+            />
+          </view>
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type === 'one-by-one' }}">
+        <view
+          class="one-by-one"
+          id="{{item['images'][0]}}"
+          bindtap="imageTapped"
+        >
+          <image
+            style="{{ SET.img1B1(gSet['img1B1HW'], gSet['mTop'], gSet['mBot']) }}"
+            mode="aspectFill"
+            lazy-load="{{ true }}"
+            src="{{ item['images'][0] + '?imageslim' }}"
+          />
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type === 'two-by-one' }}">
+        <view
+          class="two-by-one"
+          id="{{item['images'][0] }}"
+          bindtap="imageTapped"
+        >
+          <image
+            style="{{ SET.img2B1(gSet['img2B1H'], gSet['img2B1W'], gSet['mTop'], gSet['mBot']) }}"
+            mode="aspectFill"
+            lazy-load="{{ true }}"
+            src="{{ item['images'][0] + '?imageslim' }}"
+          />
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type === 'one-by-two' }}">
+        <view
+          class="one-by-two"
+          id="{{ item['images'][0] }}"
+          bindtap="imageTapped"
+        >
+          <image
+            style="{{ SET.img1B2(gSet['img1B2H'], gSet['img1B2W'], gSet['mTop'], gSet['mBot']) }}"
+            mode="aspectFill"
+            lazy-load="{{ true }}"
+            src="{{ item['images'][0] + '?imageslim' }}"
+          />
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type === 'three-by-two' }}">
+        <view
+          class="three-by-two"
+          id="{{ item['images'][0] }}"
+          bindtap="imageTapped"
+        >
+          <image
+            style="{{ SET.img3B2(gSet['img3B2H'], gSet['img3B2W'], gSet['mTop'], gSet['mBot']) }}"
+            mode="aspectFill"
+            lazy-load="{{ true }}"
+            src="{{ item['images'][0]  + '?imageslim' }}"
+          />
+        </view>
+      </block>
+    </block>
+  </view>
+
+  <view
+    class="mainImage"
+    id="{{ titleImage }}"
+    bindtap="imageTapped"
+    style="{{ SET.setHeight(gSet['titleImageHeight']) }}"
+    wx:if="{{ titleImage }}"
+  >
+    <image
+      src="{{ titleImage  + '?imageslim' }}"
+      mode="aspectFill"
+      lazy-load="{{ true }}"
+      style="{{ SET.setHeight(gSet['titleImageHeight']) }}"
+    />
+  </view>
+</view> -->
+

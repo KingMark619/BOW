@@ -1,0 +1,115 @@
+/* component/nearLocation/index.wxss */
+.block-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px lightgray;
+  transition: transform 500ms;
+  border-radius: 12px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+}
+.block-nav:active {
+  transform: scale(0.95);
+  box-shadow: unset;
+}
+.top {
+  height: auto;
+  overflow: hidden !important
+}
+.bottom {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 5px 5px 10px;
+  height: 75px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.poster {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 160px;
+  width: 100%;
+  overflow: hidden !important
+}
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-top: -15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  letter-spacing: 1.2px;
+  width: 70%
+}
+.price {
+  font-size: 12px;
+  font-weight: 400;
+  color: gray;
+  margin-top: -15px;
+  margin-left: 6px;
+}
+.top-block {
+  width: 160px;
+  margin: 0 10px;
+  height: auto;
+}
+.block {
+  margin-bottom: 15px;
+  width: auto;
+  /* height: 300px; */
+  flex-direction: row;
+  overflow-y: scroll;
+    display: inline-flex;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scroll-behavior: smooth;
+}
+
+/* .scroll-layout {
+  overflow-y: scroll;
+  display: inline-flex;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scroll-behavior: smooth;
+}
+.block {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  width: 380px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px lightgray;
+  margin: 0 10px; */
+  /* background-image: url("http://img2.chinadaily.com.cn/images/201810/31/5bd8eda7a310eff369037ccb.jpeg");
+  background-blend-mode: darken;
+  background-size: auto; */
+/* }
+.poster {
+  position: absolute;
+  border-radius: 12px;
+  height: 120px;
+  width: 380px;
+  filter: brightness(60%);
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  width: 70%;
+  color: white;
+  margin-top: 15px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  z-index: 2;
+} */
