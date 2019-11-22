@@ -6,29 +6,24 @@ Page({
    */
   data: {
     id:'',
+    catId:'',
+    type:true,
     lang: 'en',
     curtain: '',
     loaded: '',
     location: [],
+    title:[],
     categories: [],
-    searchOkay: false,
+    suggestedIndex:[],
+    suggestions: [],
+    answers:[],
+
     inputValue:'',
-    noResult: false,
     userLocation: {},
-    hidden: false,
-    sortOpen: false,
-    searchOpen: false,
     searchInput: '',
     searchResults: [],
-    parent: '',
-    currentParams: '',
-    loadmore: false,
-    nextpage: 2,
-    placeholder: '',
-    isSearch: false,
-    amapSuggestions: [],
     nativeSuggestions: [],
-    suggestions: []
+    
   },
 
   /**
@@ -39,8 +34,9 @@ Page({
     console.log(options)
     this.setData({
       id: options.id,
-      type: options.type,
-      curtain: 'show'
+      title: options.list,
+      catId: options.catId,
+      curtain: 'show',
     })
     wx.request({
       url: `https://bestofwuhan.cn/wp-json/listing/category/${this.data.id}`,
@@ -55,7 +51,6 @@ Page({
           location: res.data,
           loaded: 'loaded'
         })
-        console.log(this.data.location)
       },
     })
   },
@@ -98,32 +93,76 @@ Page({
       this.performSearch(query)
     }
   },
-  test(e) {
-    this.setData({
-      inputValue: e.detail.value
-    })
-    const findSearch = function (mySearch, title) {
-      const titleReturned = mySearch.find(function (search, index) {
-        return search.title.toLowerCase() === title.toLowerCase()
-      })
-      return titleReturned
-    }
+  look (e){
+    let value = e.detail.value.toUpperCase()
+    // let value = val.toLowerCase()
+    let list = this.data.title.split(',')
+    let locat = this.data.location
+    let newList = []
+    let results = []
+    let newLoc = []
+    let ind = []
 
-    let printMe = findSearch(this.data.location, this.data.inputValue)
-    console.log(printMe) 
-    if(printMe != undefined){
-      this.setData({
-        searchResults: printMe,
-        searchOkay: true,
-        noResult: false
+    list.forEach( function (ele){
+      let newElement = ele.toUpperCase()
+      newList.push(newElement)
+    })
+    newList.forEach(function (element,index) {
+        if (element.search(value) > -1){
+          if (value != ''){
+            ind.push(index)
+            results.push(element)
+          }
+        }
+        else {
+          console.log('nope')
+        }
       })
-    }
-    else {
-      this.setData({
-        noResult: true,
-        searchOkay: false,
-      })
-    }
+
+    ind.forEach(function(li){
+      newLoc.push(locat[li])
+    })  
+    this.setData({
+      suggestedIndex : ind,
+      suggestions: results,
+      answers: newLoc
+    })
+  },
+  displaySearch (){
+    // let showResult = []
+    // let index = this.data.suggestedIndex
+    // let list = this.data.location
+
+    // index.forEach(function(li,id){
+    //   console.log(list[li])
+    // })
+  },
+  test(e) {
+    // this.setData({
+    //   inputValue: e.detail.value
+    // })
+    // const findSearch = function (mySearch, title) {
+    //   const titleReturned = mySearch.find(function (search, index) {
+    //     return search.title.toLowerCase() === title.toLowerCase()
+    //   })
+    //   return titleReturned
+    // }
+
+    // let printMe = findSearch(this.data.location, this.data.inputValue)
+    // console.log(printMe) 
+    // if(printMe != undefined){
+    //   this.setData({
+    //     searchResults: printMe,
+    //     searchOkay: true,
+    //     noResult: false
+    //   })
+    // }
+    // else {
+    //   this.setData({
+    //     noResult: true,
+    //     searchOkay: false,
+    //   })
+    // }
     
   },
   input(e){

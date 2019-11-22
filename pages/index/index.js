@@ -59,7 +59,7 @@ Page((e = {
     checkedTime: {
       eDay: [],
       eMonth: []
-    }
+    },
 
   },
   getShop: function () {
@@ -107,7 +107,6 @@ Page((e = {
           loaded: 'loaded',
           date: date
         })
-        console.log(res.data)
         this.checkDate()
       },
     })

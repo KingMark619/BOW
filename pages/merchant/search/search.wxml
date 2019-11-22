@@ -16,8 +16,8 @@
     confirm-type="search"
     maxlength="60"
     focus="true"
-    bindinput=""
-    bindconfirm="test"
+    bindinput="look"
+    bindconfirm="look"
   />
   <image
     src="/image/cancel.svg"
@@ -26,9 +26,12 @@
     data-action="close"
   />
 </view>
-<view class="result" wx:if="{{ searchOkay }}">
+<view class="result" wx:for="{{ suggestions }}" wx:key="index">
     <name-card
-      location="{{ searchResults }}"
+      location="{{ answers[index] }}"
+      type="{{ type }}"
+      title="{{ suggestions[index] }}"
+      catId="{{ catId }}"
     />
 </view>
 <view class="noResult" wx:if="{{ noResult }}" >

@@ -48,7 +48,7 @@
       </view>
       <view class="block-on-picture">
         <view class="header-title-tag">
-          <text class="tag"> Party at </text>
+          <!-- <text class="tag"> Party at </text> -->
           <text class="event-title"> {{ title }}</text>
         </view>
         <view class="details">

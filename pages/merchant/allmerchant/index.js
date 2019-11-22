@@ -82,7 +82,7 @@ Page({
   },
   navigate(){
     wx.navigateTo({
-      url: `/pages/merchant/search/search?id=${this.data.id}`,
+      url: `/pages/merchant/search/search?id=${this.data.id}&list=${this.data.title}&catId=${this.data.id}`,
     })
   },
   // navigate code bellow, use switch 
@@ -187,6 +187,25 @@ Page({
     this.setData({
       title: title
     })
+  },
+  look(e) {
+    let val = e.detail.value
+    let value = val.toLowerCase()
+    let list = this.data.title
+    let i = ''
+
+    console.log(value)
+    console.log(list)
+    list.forEach(element => console.log(element))
+    // for (i = 0; i<list.lenght ; i++){
+    //   a = list[i]
+    //   txtValue = a.textContent || a.innerText
+    //   if (txtValue.toUpperCase().indexOf(value) > -1) {
+    //     console.log('good')
+    //   } else {
+    //     console.log('bad')
+    //   }
+    // }
   },
   onReady: function() {
 

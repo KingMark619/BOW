@@ -13,6 +13,17 @@ App({
     })
     this.getUserLocation();
     this.getUserData()
+    // if (!wx.cloud){
+    //   console.error('no cloud yoooo')
+    // }
+    // else {
+    //   console.log('cloud dey chaley')
+    //   wx.cloud.init({
+    //     env: 'marcokay',
+    //     traceUser: true
+    //   })
+    // }
+    
     // var e = this;
     // wx.getSystemInfo({
     //   success: function (t) {

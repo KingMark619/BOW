@@ -45,7 +45,7 @@
 					"id": 0,
 					"name": "CATEGORY",
 					"pathName": "pages/merchant/allmerchant/index",
-					"query": "id=341",
+					"query": "id=344",
 					"scene": null
 				},
 				{
@@ -130,6 +130,13 @@
 					"name": "MORE-EVENT",
 					"pathName": "component/moreEvent/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "SEARCH",
+					"pathName": "pages/merchant/search/search",
+					"query": "id=344",
 					"scene": null
 				}
 			]
