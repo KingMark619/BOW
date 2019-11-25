@@ -140,17 +140,17 @@ Page({
   splitTitle(){
     let lang = this.data.lang
     let title = this.data.location.title
-    let test = title.indexOf('|')
-    if (test != -1 ){
+    let test = title.split('|')
+    if (title){
       let transTitle = title.split('|')
-      if (lang === 'en'){
+      if (lang === 'zh_CN'){
         this.setData({
-          locTitle : transTitle[0]
+          locTitle : transTitle[1]
         })
       }
       else {
         this.setData({
-          locTitle: transTitle[1]
+          locTitle: transTitle[0]
         })
       }
     }
@@ -175,6 +175,13 @@ Page({
         delta: 1
       })
     }
+  },
+  navigate(){
+    wx.navigateTo({
+      url: `/pages/merchant/detail/index?id=${this.data.location.listing_id}&type=normal&logo=${this.data.location.logo}`,
+      success: (res) => {console.log(res)},
+      fail: (res) => {console.log(res)}
+    })
   },
   previewGallery () {
     let highlight = this.data.event.highlight
@@ -242,20 +249,20 @@ Page({
   transContent(){
     // split language title and content
     let test = this.data.event.content
-    let cond = test.indexOf('|')
-    if (cond > -1) {
+    let cond = test.split('|')
+    if (cond) {
       let transContent = this.data.event.content.split('|')
       let transTitle = this.data.event.title.split('|')
-      if (this.data.lang === 'en') {
-        this.setData({
-          content: transContent[0],
-          title: transTitle[0]
-        })
-      }
-      else if (transTitle[1]) {
+      if (this.data.lang === 'zh_CN') {
         this.setData({
           content: transContent[1],
           title: transTitle[1]
+        })
+      }
+      else if (transTitle[0]) {
+        this.setData({
+          content: transContent[0],
+          title: transTitle[0]
         })
       }
     }
@@ -340,8 +347,9 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function () {
+    let title = this.data.title
     return {
-      title: this.data.locTitle,
+      title: title,
       image: this.data.event.poster_url
     }
   }

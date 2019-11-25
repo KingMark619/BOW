@@ -97,6 +97,7 @@ Page({
   clickToMap: function (event) {
     let loc = this.data.location
     let name = this.data.title
+ 
     console.log(event);
     wx.getLocation({
       type: 'wgs84',
@@ -165,40 +166,41 @@ Page({
           let longitude = res.data.longitude
           let transContent = parsedContent.split('|')
           let transName = name.split('|')
+          
           // school notice 
           let transNotice
           if (res.data.school_description){
              transNotice = res.data.school_description.split('|')
-             if (this.data.lang=== 'en'){
+             if (this.data.lang=== 'zh_CN'){
                this.setData({
-                 school_description: transNotice[0]
+                 school_description: transNotice[1]
                })
              }
              else {
                this.setData({
-                 school_description: transNotice[1]
+                 school_description: transNotice[0]
                })
              }
           }
 
           // remove HTML tags from text content
           // split language
-          if (this.data.lang === 'en') {
-            this.setData({
-              title: transName[0],
-              content: transContent[0],
-            })
-          }
-          else if (transContent[1]) {
+          if (this.data.lang === 'zh_CN') {
             this.setData({
               title: transName[1],
               content: transContent[1],
             })
           }
+          else if (transName[0]) {
+            this.setData({
+              title: transName[0],
+              content: transContent[0],
+            })
+          }
           else if (parsedContent.indexOf('|') === -1 ){
             this.setData({
               content: parsedContent,
-              title:res.data.title
+              title: name
             })
           }
 
@@ -211,7 +213,6 @@ Page({
             latitude: latitude,
             longitude: longitude,
             iconPath: "/image/maps.svg",
-            title: name
             }]
           })
           this.picture()
@@ -419,7 +420,7 @@ Page({
       })
     }
   },
-  more (){
+  album (){
     const photo = this.data.photosFull
     console.log(photo)
     if (photo != []) {
@@ -427,7 +428,7 @@ Page({
         pics: photo
       }
       wx.navigateTo({
-        url: `/pages/gallery/index?pic=${photo}&title=${this.data.title}`,
+        url: `/pages/gallery/index?pic=${photo}&title=${this.data.title}&lang=${this.data.lang}`,
       })
     } else {
       console.log('no work ')

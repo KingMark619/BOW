@@ -8,7 +8,7 @@ Page({
     id:'',
     catId:'',
     type:true,
-    lang: 'en',
+    lang: '',
     curtain: '',
     loaded: '',
     location: [],
@@ -36,6 +36,7 @@ Page({
       id: options.id,
       title: options.list,
       catId: options.catId,
+      lang: options.lang,
       curtain: 'show',
     })
     wx.request({

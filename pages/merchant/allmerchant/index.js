@@ -80,9 +80,9 @@ Page({
       },
     })
   },
-  navigate(){
+  search(){
     wx.navigateTo({
-      url: `/pages/merchant/search/search?id=${this.data.id}&list=${this.data.title}&catId=${this.data.id}`,
+      url: `/pages/merchant/search/search?id=${this.data.id}&list=${this.data.title}&catId=${this.data.id}&lang=${this.data.lang}`,
     })
   },
   // navigate code bellow, use switch 
@@ -177,11 +177,11 @@ Page({
       let index = tit.indexOf('|')
       let titl = tit.split('|')
 
-      if (lang === 'en') {
-        title.push(titl[0])
+      if (lang === 'zh_CN') {
+        title.push(titl[1])
       }
       else {
-        title.push(titl[1])
+        title.push(titl[0])
       }
     })
     this.setData({

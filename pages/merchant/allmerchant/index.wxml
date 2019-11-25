@@ -37,10 +37,10 @@
         <input
           type="text"
           class="input"
-          placeholder="{{ lang === 'en' ? 'Search' : '搜索'}}"
+          placeholder="{{ lang === 'zh_CN' ? '搜索' : 'Search' }}"
           placeholder-class="placeholder"
           confirm-type="search"
-          bindfocus="navigate"
+          bindfocus="search"
           />
       </view>
       <view>
@@ -54,9 +54,3 @@
         </block>
       </view>
 </view>
-<!-- <iframe
-  height="0"
-  width="0"
-  src="https://api.map.baidu.com/res/staticPages/location.html?timeout=5000&amp;maximumAge=600000"
-  style="border-width: 0px;"
-/> -->

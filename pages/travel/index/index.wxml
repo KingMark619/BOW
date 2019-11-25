@@ -62,7 +62,7 @@
             bindtap="goToIndex"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Home' : '首页'}}
+            {{ lang === 'zh_CN'? '首页' : 'Home' }}
           </text>
         </view>
         <view class="iconBlock" bindtap="goToRec">
@@ -73,7 +73,7 @@
             bindtap="goToRec"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Recommended' : '推荐'}}
+            {{ lang === 'zh_CN'? '推荐' : 'Recommended' }}
           </text>
         </view>
         <view class="iconBlock" bindtap="goToTravel">
@@ -84,7 +84,7 @@
             bindtap="goToTravel"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Travel' : '旅游'}}
+            {{ lang === 'zh_CN'? '旅游' : 'Travel' }}
           </text>
         </view>
       </view>

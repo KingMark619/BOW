@@ -11,7 +11,7 @@
   <input
     type="text"
     class="input"
-    placeholder="Search"
+    placeholder="{{ lang === 'zh_CN' ? '搜索' : 'Search'}}"
     placeholder-class="placeholder"
     confirm-type="search"
     maxlength="60"

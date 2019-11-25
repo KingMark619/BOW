@@ -49,7 +49,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'DISCOVER' : '发现武汉' }}
+          {{ lang === 'zh_CN' ? '发现武汉' : 'DISCOVER' }}
         </text>
       </view>
       <view class="icon two" bindtap="openCategory2">
@@ -59,7 +59,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'FOOD & DINING' : '饮食' }}
+          {{ lang === 'zh_CN' ? '饮食': 'FOOD & DINING' }}
         </text>
       </view>
       <view class="icon three" bindtap="openCategory3">
@@ -69,7 +69,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'COCKTAIL BAR' : '鸡尾酒吧' }}
+          {{ lang === 'zh_CN' ? '鸡尾酒吧' : 'COCKTAIL BAR' }}
         </text>
       </view>
       <view class="icon four" bindtap="openCategory4">
@@ -79,7 +79,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'COFFEE SHOP' : '咖啡店' }}
+          {{ lang === 'zh_CN' ? '咖啡店' : 'COFFEE SHOP' }}
         </text>
       </view>
     </view>
@@ -91,7 +91,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'EDUCATION' : '教育' }}
+          {{ lang === 'zh_CN' ? '教育' : 'EDUCATION' }}
         </text>
       </view>
       <view class="icon two" bindtap="openCategory6">
@@ -101,7 +101,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'NIGHTLIFE' : '夜生活' }}
+          {{ lang === 'zh_CN' ? '夜生活' : 'NIGHTLIFE' }}
         </text>
       </view>
       <view class="icon three" bindtap="openCategory7">
@@ -111,7 +111,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'HEALTH & MED' : '医疗' }}
+          {{ lang === 'zh_CN' ? '医疗' : 'HEALTH & MED' }}
         </text>
       </view>
       <view class="icon four" bindtap="openCategory8">
@@ -121,7 +121,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'HOUSING' : '租房' }}
+          {{ lang === 'zh_CN' ? '租房' : 'HOUSING' }}
         </text>
       </view>
     </view>
@@ -133,7 +133,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'PUBLIC SERVICE' : '政务' }}
+          {{ lang === 'zh_CN' ? '政务' : 'PUBLIC SERVICE' }}
         </text>
       </view>
       <view class="icon two" bindtap="openCategory10">
@@ -143,7 +143,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'SPORTS' : '运动' }}
+          {{ lang === 'zh_CN' ? '运动' : 'SPORTS' }}
         </text>
       </view>
       <view class="icon three" bindtap="openCategory11">
@@ -153,7 +153,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'JOBS' : '招聘' }}
+          {{ lang === 'zh_CN' ? '招聘' : 'JOBS' }}
         </text>
       </view>
       <view class="icon four" bindtap="openCategory12">
@@ -163,7 +163,7 @@
           class="icon-image"
         />
         <text class="icon-text">
-          {{ lang === 'en' ? 'SCHOOL NOTICE' : '学校通知' }}
+          {{ lang === 'zh_CN' ? '学校通知' : 'SCHOOL NOTICE' }}
         </text>
       </view>
     </view>
@@ -197,7 +197,7 @@
     />
   </view> -->
 <view class="title-row" wx:if="{{ ads }}">
-  <view class="title">{{ lang === 'en' ? 'HOT IN WUHAN' : '热门活动' }}</view>
+  <view class="title">{{ lang === 'zh_CN' ? '热门活动' : 'HOT IN WUHAN' }}</view>
 </view>
   <view
     class="travel-poster"
@@ -205,12 +205,12 @@
     <TRAVEL-POSTER
       lang="{{ lang }}"
       event="{{ realAds }}"
-      title="{{ title }}"
+      title="{{ adsTitle }}"
       trending="{{ trending }}"
     />
   </view>
 <view class="title-row">
-  <view class="title">{{ lang === 'en' ? 'RECOMMENDED READ' : '推荐阅读' }}</view>
+  <view class="title">{{ lang === 'zh_CN' ? '推荐阅读' : 'RECOMMENDED READ'  }}</view>
 </view>
   <view class="first-rowoa">
     <block wx:for="{{ article }}" wx:key="key">
@@ -244,7 +244,7 @@
             bindtap="goToIndex"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Home' : '首页'}}
+            {{ lang === 'zh_CN'? '首页' : 'Home' }}
           </text>
         </view>
         <view class="iconBlock" bindtap="goToRec">
@@ -255,7 +255,7 @@
             bindtap="goToRec"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Recommended' : '推荐'}}
+            {{ lang === 'zh_CN'? '推荐' : 'Recommended'}}
           </text>
         </view>
         <view class="iconBlock" bindtap="goToTravel">
@@ -266,7 +266,7 @@
             bindtap="goToTravel"
           />
           <text class="bottom-text">
-            {{ lang === 'en'? 'Travel' : '旅游'}}
+            {{ lang === 'zh_CN'? '旅游' : 'Travel' }}
           </text>
         </view>
       </view>

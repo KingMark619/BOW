@@ -16,7 +16,7 @@
         </view>
           <view class="bottom">
             <text class="name">
-               {{ item.title }}
+               {{ lang === 'zh_CN' ? title[index][1] : title[index][0] }}
             </text>
             <text class="price">
                {{ item.start_date }}
@@ -27,6 +27,7 @@
         </view>
       </block>
     </view>
+</scroll-view>
   <!-- <view class="scroll-layout" bindtap='goToTrip'>
     <block
       wx:for="{{ event }}"
@@ -44,4 +45,3 @@
       </navigator>
     </block>
   </view> -->
-</scroll-view>

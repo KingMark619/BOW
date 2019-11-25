@@ -62,7 +62,7 @@
   height: auto;
 }
 .block {
-  margin: 15px 0;
+  /* margin: 15px 0; */
   padding: 15px 0;
   width: auto;
   /* height: 300px; */

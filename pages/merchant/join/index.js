@@ -11,8 +11,10 @@ Page({
     curtain:'',
     loaded: '',
     catId: 338,
+    id:338,
     lang:'',
-    title:[]
+    title:[],
+    index:[]
   },
   
   onLoad(options) {
@@ -41,8 +43,37 @@ Page({
           loaded: 'loaded'
         })
         this.translate()
+        this.reorder()
       },
     })
+  },
+  reorder(){
+    let location = this.data.location
+    let index = []
+
+    location.forEach(function(e){
+      console.log(e.order_index)
+      let id = e.order_index
+      index.push(id)
+    })
+    index.sort(function (a, b) { return a - b });
+    console.log(index)
+    this.setData({
+      index : index
+    })
+    this.rearange()
+  },
+  rearange(){
+    let location = this.data.location
+    let index = this.data.index
+
+    let newArr = [];
+
+    for (var i = 0; i < index.length; i++) {
+      newArr[i] = location[index[i]]
+    }
+    console.log(newArr);
+    console.log(location)
   },
   translate(){
     let location = this.data.location
@@ -54,22 +85,22 @@ Page({
       let index = tit.indexOf('|')
       let titl = tit.split('|')
 
-      if (lang === 'en'){
-        title.push(titl[0])
+      if (lang === 'zh_CN'){
+        title.push(titl[1])
       }
       else {
-        title.push(titl[1])
+        title.push(titl[0])
       }
     })
     this.setData({
       title : title
     })
   },
-  navigate() {
-    wx.navigateTo({
-      url: `/pages/merchant/search/search?id=216`,
-    })
-  },
+  // navigate() {
+  //   wx.navigateTo({
+  //     url: `/pages/merchant/search/search?id=338`,
+  //   })
+  // },
   goToListing () {
     wx.navigateTo({
       url: '/pages/merchant/join/index',
@@ -101,6 +132,11 @@ Page({
   goToTravel() {
     wx.navigateTo({
       url: '/pages/travel/index/index',
+    })
+  },
+  search() {
+    wx.navigateTo({
+      url: `/pages/merchant/search/search?id=${this.data.id}&list=${this.data.title}&catId=${this.data.id}&lang=${this.data.lang}`,
     })
   },
   onReady: function() {
@@ -148,7 +184,7 @@ Page({
   onShareAppMessage: function () {
     const image = '/image/logo.png '
     return {
-      title: 'Best Of Wuhan',
+      title: 'BESTOFWUHAN',
       imageUrl: image
     };
   },

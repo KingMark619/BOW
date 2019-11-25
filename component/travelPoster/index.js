@@ -11,7 +11,7 @@ Component({
     },
     lang: {
       type: String,
-      default: []
+      default: ''
     },
     title: {
       type: Array,

@@ -8,7 +8,8 @@ Page({
     listing_id:'',
     photos: [],
     statusBar:'',
-    title:''
+    title:'',
+    lang:''
   },
 
   /**
@@ -16,14 +17,33 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    const title = options.title
+    const tit = options.title.split('|')
+    const lang = options.lang
     const pics = options.pic
     let photo = pics.split(',')
+    const index = options.title.indexOf('|')
+    if (index != -1){
+      if (lang === 'zh_CN') {
+        this.setData({
+          title: tit[1],
+          photos: photo,
+        })
+      }
+      else {
+        this.setData({
+          title: tit[0],
+          photos: photo,
+        })
+      }
+    }
+    else {
+      this.setData({
+        photos: photo,
+        title: options.title
+      })
+    }
     console.log(photo)
-    this.setData({
-      photos: photo,
-      title: title
-    })
+    
     wx.getSystemInfo({
       success: (res) => {
         this.setData({

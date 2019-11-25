@@ -48,7 +48,7 @@
       </view>
       <view class="block-on-picture">
         <view class="header-title-tag">
-          <!-- <text class="tag"> Party at </text> -->
+          <text class="tag" wx:if="{{ event.type != null }}"> {{ event.type }} </text>
           <text class="event-title"> {{ title }}</text>
         </view>
         <view class="details">
@@ -59,7 +59,7 @@
           <view class="more-details">
             <view class="more-button" data-id="id" bindtap="changescroll">
              <text class="more-text">
-              {{ lang === 'en' ? 'MORE DETAILS →' : '更多信息 →'}}
+              {{ lang === 'zh_CN' ? '更多信息 →' : 'MORE DETAILS →' }}
              </text>
             </view>
           </view>
@@ -89,18 +89,18 @@
       </text>
     </view>
     <view class="title-row">
-      <view class="title-row-text">{{ lang === 'en' ? 'About' : '亮点'}}       </view>
-      <view class="title-row-text red">{{ locTitle }}</view>
+      <view class="title-row-text">{{ lang === 'zh_CN' ? '亮点' : 'About'}}       </view>
+      <view class="title-row-text red" bindtap="navigate">{{ locTitle }}</view>
     </view>
   <!-- iugug  kjgyshdjfkguludyttjfukg -->
     <view class="photo-block">
       <block class="about-block"  wx:for="{{ markers.image }}" wx:key="key">
         <view class="high-block">
             <view class="high-title">
-        {{ lang === 'en' ? markers.title[index][0] : markers.title[index][1] }}
+        {{ lang === 'zh_CN' ? markers.title[index][1] : markers.title[index][0] }}
             </view>
             <view class="high-caption">
-         {{ lang === 'en' ? markers.description[index][0] : markers.description[index][1] }}
+         {{ lang === 'zh_CN' ? markers.description[index][1] : markers.description[index][0] }}
             </view>
           </view>
         
@@ -139,13 +139,13 @@
     </view> -->
 
 
-    <!-- <view class="title-row">
-      <view class="title-row-text">{{ lang === 'en' ? 'More Events' : '更多活动'}} </view>
+    <view class="title-row">
+      <view class="title-row-text">{{ lang === 'zh_CN' ? '更多活动' : 'More Events' }} </view>
     </view>
     <view class="more-event-block">
       <MORE-EVENTS
-      
+        event = "{{ event }}"
       />
-    </view> -->
+    </view>
   </view>
 </view>

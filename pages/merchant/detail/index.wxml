@@ -53,7 +53,7 @@
       src="{{ location.logo }}"
       mode="widthFix"
       class="gallery-image"
-      bindtap="more"
+      bindtap="album"
     />
     <!-- <GALLERY
       galleryImages="{{ photosFull }}"
@@ -86,12 +86,12 @@
     <view class="info-block" wx:if="{{ distance != '' }}">
       <!-- <text class="text"> {{ lang === 'en' ? 'Avg Price' : '人均¥' }} : {{ lang ==='en' ? avgPrice+' 元' : avgPrice+' 元'}} </text> -->
       <text class="text" wx:if="{{ distance != '' }}">
-        {{ lang === 'en' ? 'Distance : ' : '距离 : '}}{{ distance }} {{ lang === 'en' ? ' Km' : ' 千米'}}
+        {{ lang === 'zh_CN' ?  '距离 : ': 'Distance : ' }}{{ distance }} {{ lang === 'zh_CN' ? ' 千米' : ' Km' }}
       </text> 
     </view>
     <view class="info-block">
       <text class="text" wx:if="{{ location.mon_sat != '-' }}">
-        {{ lang === 'en' ? 'Opening Time' : '工作时间' }} : {{ location.mon_sat }}
+        {{ lang === 'zh_CN' ? '工作时间' : 'Opening Time' }} : {{ location.mon_sat }}
       </text>
     </view>
     <!-- <view class="icon-block {{ location.mon_sat != '-' ? '' : 'no-time'}}">
@@ -132,7 +132,7 @@
   </view>
   <view class="second-row" wx:if="{{ location.content != '' }}" >
     <text class="sub-title">
-      {{ lang === 'en' ? 'Description' : '简介'}}
+      {{ lang === 'zh_CN' ? '简介' : 'Description' }}
     </text>
     <text class="description {{ more }}">
     {{ content }}
@@ -146,17 +146,17 @@
   <!-- <view class="divider"/> -->
   <view class="third-row" wx:if="{{ location.image_gallery != 'N;'}}">
     <text class="sub-title">
-      {{ lang === 'en' ? 'About' : '亮点'}}
+      {{ lang === 'zh_CN' ? '亮点' : 'About' }}
     </text>
     <view class="photo-block">
       <block wx:for="{{ highlight[0].picture }}" wx:key="key">
         <view class="high-block">
           <view class="high-text-block">
           <view class="high-title">
-        {{ lang === 'en' ? highlight[0].title[index][0] : highlight[0].title[index][1] }}
+        {{ lang === 'zh_CN' ? highlight[0].title[index][1] : highlight[0].title[index][0] }}
         </view>
           <view class="high-caption">
-            {{ lang === 'en' ? highlight[0].description[index][0] : highlight[0].description[index][1]  }} 
+            {{ lang === 'zh_CN' ? highlight[0].description[index][1] : highlight[0].description[index][0]  }} 
           </view>
         </view>
         </view>
@@ -172,9 +172,9 @@
       </block>
     </view>
   </view>
-  <view class="fifth-row" wx:if="{{ nearLocation != [] }}">
+  <view class="fifth-row" wx:if="{{ nearLocation != [] && category_id != ''}}">
     <text class="sub-title">
-      {{ lang === 'en' ? 'You might also like' : '类似商家'}}
+      {{ lang === 'zh_CN' ? '类似商家' : 'You might also like' }}
     </text>
   </view>
   <view class="nearLocation-block" wx:if="{{ nearLocation != [] }}">
@@ -216,7 +216,7 @@
         {{ location.address }}
       </text>
       <text class="text-info end" wx:if="{{ location.latitude }}">
-        {{ distance }} {{ lang === 'en' ? ' Km' : ' 千米'}}
+        {{ distance }} {{ lang === 'zh_CN' ? ' 千米' : ' Km' }}
       </text>
     </view>
     <view class="info-block">
@@ -265,7 +265,7 @@
   </view>
   <view class="second-row" wx:if="{{ location.content }}" >
     <text class="sub-title">
-      {{ lang === 'en' ? 'Description' : '简介'}}
+      {{ lang === 'zh_CN' ? '简介' : 'Description' }}
     </text>
     <text class="description">
     {{ content }}
@@ -274,7 +274,7 @@
   <!-- <view class="divider"/> -->
   <view class="third-row" wx:if="{{ location.image_gallery != 'N;'}}">
     <text class="sub-title">
-      {{ lang === 'en' ? 'About' : '亮点'}}
+      {{ lang === 'zh_CN' ? '亮点' : 'About' }}
     </text>
     <view class="photo-block">
       <block wx:for="{{ photos250 }}" wx:key="key">
@@ -289,7 +289,7 @@
   </view>
   <view class="fifth-row" wx:if="{{ location.school_notice }}">
     <text class="sub-title">
-      {{ lang === 'en' ? 'Notice' : '通知'}}
+      {{ lang === 'zh_CN' ? '通知' : 'Notice' }}
     </text>
     <text class="notice-title">
     {{ location.school_notice }}.

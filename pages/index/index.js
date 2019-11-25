@@ -33,6 +33,7 @@ Page((e = {
     trending: true,
     realEvent:[],
     realAds:[],
+    adsTitle:[],
 
     indicatorDotss: !0,
     autoplays: !0,
@@ -250,6 +251,18 @@ Page((e = {
         eMonth: eventMonth
       }
     })
+    this.translateAds()
+  },
+  translateAds(){
+    let ads = this.data.realAds
+    let adsTitle = []
+    ads.forEach(function(ad){
+      let tit = ad.title.split('|')
+      adsTitle.push(tit)
+    })
+    this.setData({
+      adsTitle: adsTitle
+    })
   },
 // end time check
 // start of categories navigation
@@ -361,7 +374,7 @@ Page((e = {
   onShareAppMessage: function () {
     const image = '/image/logo.png'
     return {
-      title: 'Best Of Wuhan',
+      title: 'BESTOFWUHAN',
       imageUrl: image
     };
   },
