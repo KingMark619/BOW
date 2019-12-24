@@ -6,19 +6,27 @@
   <view class="button-row">
   <view class="dismiss">
     <image
-      src="/image/close.svg" 
+      src="/image/close-black.svg" 
       mode="widthFix"
       class="icon"
       bindtap="dismiss"
     />
+    <text class="text">
+      {{ lang === 'zh_CN' ? '取消' : 'Dismiss' }}
+    </text>
   </view>
-  <navigator class="didi" target="miniProgram" open-type="navigate" app-id="wxaf35009675aa0b2a">
-    <image
-      src="/image/didi.svg"
-      mode="widthFix"
-      class="didi-icon"
-      bindtap="didi"
-    />
-  </navigator>
+  <view  class="didi">
+    <navigator target="miniProgram" open-type="navigate" app-id="wxaf35009675aa0b2a">
+      <image
+        src="/image/didi.svg"
+        mode="widthFix"
+        class="didi-icon"
+        bindtap="didi"
+      />
+    </navigator>
+    <text class="text">
+      {{ lang === 'zh_CN' ? '打车' : 'Get a cab' }}
+    </text>
+  </view>
   </view>
 </view>

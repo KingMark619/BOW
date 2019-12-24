@@ -1,5 +1,5 @@
 <!--component/nameCard/index.wxml-->
-<navigator url="/pages/merchant/detail/index?id={{ location.listing_id }}&type={{ type ? 'normal' : 'school' }}&logo={{ location.logo }}&catId={{ catId }}">
+<navigator url="/pages/merchant/detail/index?id={{ location.listing_id }}&type={{ type ? 'normal' : 'school' }}&logo={{ location.logo }}&catId={{ catId }}&dbId={{ location._id}}">
 <view
   class="block"
   bindtap="navigate"

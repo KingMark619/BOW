@@ -13,28 +13,44 @@
   }
 }
 .input-block {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 94%;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 95px;
+  height: 30px;
+  border: 2px solid #ff4c4c;
+  border-radius: 8px;
+  padding-bottom: 5px;
+}
+.swipe-text {
+  font-size: 14px;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
 }
 .input {
-  width: 90%;
+  width: 88%;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 8px;
   margin: auto;
   padding: 0 15px;
-  border: 1px solid #f7f7f7;
+  border: 2px solid #ff4c4c;
 }
 .placeholder {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 400;
   color: gray;
   letter-spacing: 0.2px;
+  text-align: center;
+  margin: auto;
 }
 .slider-block {
   width: 100%;
   height: auto;
   margin: 15px 0%;
-  margin-top: 80px;
 }
 .swiper {
   height: 270px;
@@ -48,6 +64,11 @@
   height: 100%;
   width: 100%;
   border-radius: 5px;
+}
+.suggestSwipe {
+  height: 50px;
+  width: 25%;
+  margin-left: 17%;
 }
 .travel-poster {
   height: auto;
@@ -193,7 +214,7 @@
 }
 .nameoa {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: black;
   margin-top: -20px;
   overflow: hidden;

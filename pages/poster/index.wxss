@@ -1,0 +1,51 @@
+/* pages/poster/index.wxss */
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.poster {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+.save-block {
+  background: #ff4c4c;
+  border-radius: 25px;
+  width: 50%;
+  height: 35px;
+  margin: auto;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.save-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+.main-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+.picture-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 65vh;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 8px #f7f7f7;
+}

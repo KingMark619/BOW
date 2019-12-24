@@ -19,6 +19,11 @@ Page({
     statusBar:'',
     trending:'',
 
+    hide:'',
+    address:'',
+    shadow:'',
+    share:'',
+
     markers: {
       title: [],
       description: [],
@@ -202,12 +207,11 @@ Page({
     })
   }, 
   previewMain(e) {
-    console.log(e)
     let image = this.data.mainImage
     let index = e.currentTarget.id;
     wx.previewImage({
       current: image,
-      urls: `${image}`
+      urls: [image]
       
     })
   },
@@ -297,6 +301,49 @@ Page({
       }).exec()
     })
   },
+  sharePoster: function () {
+    wx.navigateTo({
+      url: `/pages/poster/index?poster=${this.data.mainImage}&lang=${this.data.lang}&post=/image/qrCode.png`
+    });
+  },
+  clickToMap: function (event) {
+    let loc = this.data.location
+    let name = this.data.title
+
+    console.log(event);
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        wx.openLocation({
+          latitude: parseFloat(loc.latitude),
+          longitude: parseFloat(loc.longitude),
+          scale: 18,
+          name: name,
+          address: loc.address
+        })
+      }
+    })
+  },
+  showTaxi() {
+    this.setData({
+      address: 'address',
+      shadow: 'shadow'
+    })
+  },
+  share() {
+    this.setData({
+      share: 'share',
+      shadow: 'shadow'
+    })
+  },
+  hide() {
+    this.setData({
+      hide: 'none',
+      address: '',
+      share: '',
+      shadow: ''
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -315,11 +362,11 @@ Page({
    * Lifecycle function--Called when page hide
    */
   onHide: function() {
-    this.setData({
-      id:'',
-      event:[],
-      location:[],
-    })
+    // this.setData({
+    //   id:'',
+    //   event:[],
+    //   location:[],
+    // })
   },
   onUnload: function() {
     // this.setData({

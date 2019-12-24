@@ -1,0 +1,41 @@
+<!--pages/poster/index.wxml-->
+<view
+  class="header-icons"
+  style="margin-top:{{statusBar - 20}}px"
+>
+  <view>
+    <image
+      src="/image/back.svg"
+      mode="widthFix"
+      class="back-icon"
+      bindtap="goback"
+    />
+  </view>
+  <view class="divider" />
+  <view>
+    <image
+      src="/image/home.svg"
+      mode="widthFix"
+      class="home-icon"
+      bindtap="onHome"
+    />
+  </view>
+</view>
+
+<view class="block">
+  <canvas canvas-id="myCanvas" class="picture-block">
+  
+  </canvas>
+  <!-- <view class="picture-block">
+    <image
+      class="main-image"
+      src="{{ mainImage }}"
+      bindtap="preview"
+      mode="aspectFill"
+    />
+  </view> -->
+  <view class="save-block" bindtap="saveCanva">
+    <text class="save-text"> {{ lang === 'zh_CN'?'保存至相册':'Save to Album'}} </text>
+  </view>
+</view>
+

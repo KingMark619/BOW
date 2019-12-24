@@ -55,13 +55,6 @@
       class="gallery-image"
       bindtap="album"
     />
-    <!-- <GALLERY
-      galleryImages="{{ photosFull }}"
-      bind:preview="preview"
-      bind:more="more"
-      id="gallery"
-      class="galleryComponent"  
-    /> -->
   </view>
   <view class="first-row">
     <view class="head-row">
@@ -89,10 +82,48 @@
         {{ lang === 'zh_CN' ?  '距离 : ': 'Distance : ' }}{{ distance }} {{ lang === 'zh_CN' ? ' 千米' : ' Km' }}
       </text> 
     </view>
-    <view class="info-block">
-      <text class="text" wx:if="{{ location.mon_sat != '-' }}">
+
+    <view class="divi" wx:if="{{ location.mon_sat != '-' }}"/>
+
+    <view class="info-block" wx:if="{{ location.mon_sat != '-' }}">
+      <text class="text">
         {{ lang === 'zh_CN' ? '工作时间' : 'Opening Time' }} : {{ location.mon_sat }}
       </text>
+    </view>
+    <view class="info-block call-block" wx:if="{{ phone != '' }}" bindtap="makeCall">
+      <text class="text" style="width:auto;">
+        {{ lang === 'zh_CN' ? '电话' : 'Phone' }} : 
+      </text>
+      <text class="text call">{{ location.telephone }} </text>
+    </view>
+
+    <view class="divi"/>
+
+    <view class="transport-block">
+      <view class="left">
+        <image
+        src="/image/pin.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="clickToMap"
+      />
+      </view>
+      <view class="right">
+        <image
+        src="/image/taxi-2.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="showTaxi"
+      />
+      </view>
+      <view class="right">
+        <image
+        src="/image/share.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="share"
+      />
+      </view>
     </view>
     <!-- <view class="icon-block {{ location.mon_sat != '-' ? '' : 'no-time'}}">
       <image
@@ -116,7 +147,7 @@
       </view> -->
   </view>
   <!-- <view class="divider"/> -->
-  <view class="fourth-row" wx:if="{{ location.address }}">
+  <!-- <view class="fourth-row" wx:if="{{ location.address }}">
       <map
         bindtap="clickToMap"
         id="map"
@@ -129,7 +160,7 @@
         style="width: 85%;margin:auto; height: 180px;"
       >
       </map>
-  </view>
+  </view> -->
   <view class="second-row" wx:if="{{ location.content != '' }}" >
     <text class="sub-title">
       {{ lang === 'zh_CN' ? '简介' : 'Description' }}
@@ -186,7 +217,24 @@
     </view>
   <!-- <view class="divider"/> -->
   <view class="{{ address === '' ? 'none' : 'address-block' }} {{ hide }}">
-    <Address location="{{ location }}" bind:dismiss="hide" bind:didi="didi"/>
+    <Address
+      location="{{ location }}"
+      lang="{{ lang }}"
+      bind:dismiss="hide"
+      bind:didi="didi"
+    />
+  </view>
+  <view class="{{ share === '' ? 'none' : 'share-block' }} {{ hide }}">
+    <SHARE
+      title="{{ title }}"
+      lang="{{ lang }}"
+      bind:wechat="onShareAppMessage"
+      bind:poster="sharePoster"
+      bind:cancel="hide"
+    />
+  </view>
+  <view class="{{ shadow === '' ? 'noShadow' : 'shadow' }}" bindtap="hide">
+  
   </view>
 </view>
 

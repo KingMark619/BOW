@@ -8,6 +8,7 @@
     "usingComponents": {
       "TRAVEL-POSTER": "/component/travelPoster/index",
       "SERVICE-CARD": "/component/serviceCard/index",
-      "NAME-CARD": "/component/nameCard/index"
+      "NAME-CARD": "/component/nameCard/index",
+      "EVENT": "/component/event/index"
     }
 }

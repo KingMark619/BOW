@@ -5,6 +5,10 @@ Component({
       type: Object,
       default: {}
     },
+    lang: {
+      type: String,
+      default:''
+    }
   },
   methods: {
     dismiss() {

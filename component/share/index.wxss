@@ -1,4 +1,4 @@
-/* component/address/index.wxss */
+/* component/share/index.wxss */
 .block {
   height: 30vh;
   display: flex;
@@ -25,13 +25,27 @@
   font-weight: 400;
   letter-spacing: 0.2px;
 }
+.cancel-row,
 .button-row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 10px;
-  margin-top: 30px;
+}
+.button-row {
+  margin-top: 20px;
+}
+.cancel-row {
+  border: 1px solid #ff4c4c;
+  margin: 10px;
+  border-radius: 8px;
+}
+.cancel-row .text {
+  margin: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #ff4c4c;
 }
 .dismiss {
   display: flex;
@@ -39,7 +53,13 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: -8vh;
+  margin-top: -4vh;
+  border: none !important ;
+  background: none !important;
+  background-color: none !important;
+}
+.dismiss::after {
+  border: none !important;
 }
 .didi {
   display: flex;
@@ -47,25 +67,27 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: -8vh;
+  margin-top: -4vh;
 }
 .icon {
-  width: 40px;
-  height: 40px;
-  margin-top: 5px;
+  width: 45px;
+  height: 45px;
 }
 .didi-icon {
-  width: 50px;
-  height: 50px;
-}
-.text {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
+  width: 45px;
+  height: 45px;
 }
 .didi .text {
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  margin-top: -5px;
+  margin-top: 10px;
+}
+.dismiss .text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+.share {
+  color: #ff4c4c;
 }

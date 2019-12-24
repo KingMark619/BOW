@@ -1,0 +1,114 @@
+/* component/coupon/index.wxss */
+.coupon-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed lightgray ;
+  padding: 10px;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 40%;
+}
+.title-row {
+  display: block;
+  margin-bottom: 15px;
+}
+.title {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: black;
+}
+.date-row {
+  display: block;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.date {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  color: #8b8b8b;
+}
+.price-row {
+  display: block;
+  padding-left: 10px;
+}
+.price {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  color: #ff4c4c;
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+.bow-row {
+  display: block;
+}
+.bow {
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 0.7px;
+}
+.code-row {
+  display: block
+}
+.code {
+  width: 80px;
+  height: 80px;
+}
+.exp-row {
+  display: block;
+}
+.exp {
+  font-size: 11px;
+  font-weight: 300;
+  color: #8b8b8b;
+}
+
+
+.outer {
+  overflow: hidden;
+}
+.inner {
+  /* border: 1px solid #888; */
+}
+.inner i {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #888;
+  border-radius: 50px;
+  background-color: #fff;
+}
+.inner .top {
+  margin-top: -20px;
+}
+.inner .bottom {
+  margin-top: -20px;
+  margin-bottom: -22px;
+}
+.inner .left {
+  float: left;
+  margin-left: -20px;
+}
+.inner .right {
+  float: right;
+  margin-right: -20px;
+}
+.content {
+  min-height: 80px;
+}

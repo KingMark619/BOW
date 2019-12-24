@@ -6,6 +6,7 @@
     "INFO-TRAVEL":"/component/infoTravel/index",
     "ICON-BLOCK":"/component/icon/index",
     "GALLERY":"/component/gallery/index",
-    "NEARBY-LOCATION": "/component/nearLocation/index"
+    "NEARBY-LOCATION": "/component/nearLocation/index",
+    "SHARE":"/component/share/index"
   }
 }

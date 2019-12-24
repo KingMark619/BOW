@@ -48,7 +48,7 @@
       </view>
       <view class="block-on-picture">
         <view class="header-title-tag">
-          <text class="tag" wx:if="{{ event.type != null }}"> {{ event.type }} </text>
+          <text class="tag" wx:if="{{ event.type != null && trending === 'false' }}"> {{ event.type }} </text>
           <text class="event-title"> {{ title }}</text>
         </view>
         <view class="details">
@@ -83,6 +83,7 @@
       @ {{ locTitle }}
       </navigator>
     </view> -->
+
     <view class="content-block" wx:if="{{ event.content }}">
       <text class="content">
         {{ content }}
@@ -91,6 +92,40 @@
     <view class="title-row">
       <view class="title-row-text">{{ lang === 'zh_CN' ? '亮点' : 'About'}}       </view>
       <view class="title-row-text red" bindtap="navigate">{{ locTitle }}</view>
+    </view>
+        <view class="transport-block">
+      <view class="left">
+        <image
+        src="/image/pin.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="clickToMap"
+      />
+      </view>
+      <view class="right">
+        <image
+        src="/image/taxi-2.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="showTaxi"
+      />
+      </view>
+      <view class="right">
+        <image
+        src="/image/share.svg"
+        mode="widthFix"
+        class="icon"
+        bindtap="share"
+      />
+      </view>
+    </view>
+    <view class="coupon-block">
+      <COUPON
+        title="{{ title }}"
+        date="{{ event.start_date }}"
+        price="{{ event.price }}"
+        lang="{{ lang }}"
+      />
     </view>
   <!-- iugug  kjgyshdjfkguludyttjfukg -->
     <view class="photo-block">
@@ -139,13 +174,33 @@
     </view> -->
 
 
-    <view class="title-row">
+    <!-- <view class="title-row">
       <view class="title-row-text">{{ lang === 'zh_CN' ? '更多活动' : 'More Events' }} </view>
     </view>
     <view class="more-event-block">
       <MORE-EVENTS
         event = "{{ event }}"
       />
-    </view>
+    </view> -->
+  </view>
+    <view class="{{ address === '' ? 'none' : 'address-block' }} {{ hide }}">
+    <ADDRESS
+      location="{{ location }}"
+      lang="{{ lang }}"
+      bind:dismiss="hide"
+      bind:didi="didi"
+    />
+  </view>
+  <view class="{{ share === '' ? 'none' : 'share-block' }} {{ hide }}">
+    <SHARE
+      title="{{ title }}"
+      lang="{{ lang }}"
+      bind:wechat="onShareAppMessage"
+      bind:poster="sharePoster"
+      bind:cancel="hide"
+    />
+  </view>
+  <view class="{{ shadow === '' ? 'noShadow' : 'shadow' }}" bindtap="hide">
+  
   </view>
 </view>

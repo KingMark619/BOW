@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(10, 10, 10);
+  background: rgb(7, 6, 6);
   /* position: absolute; */
   bottom: 0%;
   width: 100%;
@@ -91,7 +91,7 @@
   font-weight: 400;
 }
 .more-details {
-  background: yellow;
+  background: #ff4c4c;
   height: 60px;
   width: 50%;
   border-radius: 3px
@@ -100,7 +100,7 @@
   text-align: center;
 }
 .more-text {
-  color: black;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
@@ -193,6 +193,7 @@
 .red {
   color: #ff4c4c;
   margin: -10px 0 0 15px;
+  text-decoration: underline;
 }
 .black {
   color: #8b8b8b;
@@ -293,4 +294,79 @@
   padding: 0 15px;
   letter-spacing: 1.5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.transport-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.transport-block .left {
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: center;
+}
+.transport-block .right {
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: center;
+  border-left: 2px solid #f7f7f7
+}
+.icon {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 5px;
+}
+.none {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.address-block,
+.share-block {
+  display: block;
+  height: 30vh;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 8px;
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+.shadow {
+  display: block;
+height: 70vh;
+overflow: hidden;
+position: fixed;
+width: 100%;
+top: 0;
+opacity: 0.5;
+background: #333030;
+transition: all 0.3s;
+box-sizing: border-box;
+}
+.noShadow {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.coupon-block {
+  width: 97%;
+  margin: auto;
+  margin-top: 15px;
 }

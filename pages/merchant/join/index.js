@@ -69,10 +69,19 @@ Page({
 
     let newArr = [];
 
-    for (var i = 0; i < index.length; i++) {
-      newArr[i] = location[index[i]]
-    }
-    console.log(newArr);
+    // for (var i = 0; i < index.length; i++) {
+    //   newArr[i] = location[index[i]]
+    // }
+
+    location.forEach(function(e,id){
+      if (e.order_index != null){
+        let ide = e.order_index
+        let newA = location.splice(id, 1, e)
+        
+        console.log(newA[0])
+        location.splice(ide, 1, e)
+      }
+    })
     console.log(location)
   },
   translate(){

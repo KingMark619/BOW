@@ -1,0 +1,30 @@
+<!--component/share/index.wxml-->
+<view class="block">
+  <view class="title-row">
+    <text class="title"> {{ lang === 'zh_CN' ? '给你的朋友们分享' : 'Let others know about' }} </text>
+    <text class="title share"> {{ title }} </text>
+  </view>
+  <view class="button-row">
+  <button class="dismiss" open-type="share">
+    <image
+      src="/image/wechat.svg" 
+      mode="widthFix"
+      class="icon"
+      bindtap="wechat"
+    />
+    <text class="text">{{ lang === 'zh_CN' ? '取消' : 'Share to Chat'}}</text>
+  </button>
+  <view class="didi">
+    <image
+      src="/image/moments.png"
+      mode="widthFix"
+      class="didi-icon"
+      bindtap="poster"
+    />
+    <text class="text">{{ lang === 'zh_CN' ? '取消' : 'Share on Moments'}}</text>
+  </view>
+  </view>
+  <view class="cancel-row" bindtap="cancel">
+    <text class="text">{{ lang === 'zh_CN' ? '取消' : 'Cancel'}}</text>
+  </view>
+</view>

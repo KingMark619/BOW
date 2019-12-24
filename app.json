@@ -1,4 +1,5 @@
 {
+  "cloud":true,
   "pages": [
     "pages/index/index",
     "pages/shop/notice/index/index",
@@ -58,7 +59,11 @@
     "pages/test/index",
     "pages/gallery/index",
     "component/nearLocation/index",
-    "component/moreEvent/index"
+    "component/moreEvent/index",
+    "component/event/index",
+    "component/share/index",
+    "pages/poster/index",
+    "component/coupon/index"
   ],
   "permission": {
     "scope.userLocation": {
@@ -73,7 +78,8 @@
     "navigationStyle": "custom"
   },
   "navigateToMiniProgramAppIdList": [
-    "wxaf35009675aa0b2a"
+    "wxaf35009675aa0b2a",
+    "wxb86275800103220c"
   ],
   "sitemapLocation": "sitemap.json"
 }

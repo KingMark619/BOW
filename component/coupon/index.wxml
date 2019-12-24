@@ -1,0 +1,44 @@
+<!--component/coupon/index.wxml-->
+<view class="coupon-block">
+  <view class="left-side">
+    <view class="title-row">
+      <text class="title">{{ title }} </text>
+    </view>
+    <view class="date-row">
+      <text class="date">{{ date }}</text>
+    </view>
+    <view class="price-row">
+      <text class="price">{{ price }}</text>
+    </view>
+  </view>
+  <view class="right-side">
+    <view class="bow-row">
+      <text class="bow"> BESTOFWUHAN</text>
+    </view>
+    <view class="code-row">
+      <image
+        src="https://mmbiz.qpic.cn/mmbiz_jpg/vib5iak40aZHH2ccphC5js298P4z6pYcU8aqlcYfoZVI7JG9MVD6OEQlWZuJFDsAZ1uukMicpvn1guGb4oL4u3M8A/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1"
+        mode="widthFix"
+        class="code"
+      />
+    </view>
+    <view class="exp-row">
+      <text class="exp">{{ lang === 'zh_CN' ? '请扫描上面二维码并发送您的姓名与手机号码来预约本次活动':'Please Scan the QR Code above and send your Name + Phone number for Reservation' }}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 
+<div class="outer">
+  <div class="inner">
+    <i class="top left"></i>
+    <i class="top right"></i>
+    <div class="content">
+      <view>
+      
+      </view>
+    </div>
+    <i class="bottom right"></i>
+    <i class="bottom left"></i>
+  </div>
+</div> -->

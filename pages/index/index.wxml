@@ -11,17 +11,36 @@
 </view>
 <!-- end new header -->
 <view class="page" wx:if="{{ loaded }}">
-  <!-- <view class="input-block">
-    <input
+  <view class="input-block">
+    <!-- <input
       type="text"
       class="input"
       placeholder="Search"
       placeholder-class="placeholder"
       confirm-type="search"
-    />
-  </view> -->
-  <view class="slider-block">
+    /> -->
     <swiper
+    indicator-dots="{{ indicatorDots }}"
+      autoplay="{{ autoplay }}"
+      interval="{{ interval }}"
+      duration="{{ duration }}"
+      class="suggestSwipe">
+        <block wx:for="{{ searchSuggest }}" wx:key="key">
+          <swiper-item>
+            <text class="swipe-text">
+              {{ lang === 'zh_CN' ? item.ch : item.eng }}
+            </text>
+        </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class="slider-block">
+    <EVENT
+      lang="{{ lang }}"
+      event="{{ realEvent }}"
+      title="{{ realEventTitle }}"
+    />
+    <!-- <swiper
       class="swiper"
       indicator-dots="{{ indicatorDots }}"
       autoplay="{{ autoplay }}"
@@ -38,7 +57,7 @@
         </navigator>
       </swiper-item>
       </block>
-    </swiper>
+    </swiper> -->
   </view>
   <view class="icon-block">
     <view class="row">
@@ -258,6 +277,16 @@
             {{ lang === 'zh_CN'? '推荐' : 'Recommended'}}
           </text>
         </view>
+        <navigator class="iconBlock" app-id="wxb86275800103220c" target="miniProgram" open-type="navigate">
+          <image
+            src="/image/tab-bar/grocery.png"
+            mode="widthFit"
+            class="bottom-icon"
+          />
+          <text class="bottom-text">
+            {{ lang === 'zh_CN'? '购物' : 'Shopping' }}
+          </text>
+        </navigator>
         <view class="iconBlock" bindtap="goToTravel">
           <image
             src="/image/tab-bar/map.svg"
