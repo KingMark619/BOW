@@ -1,5 +1,7 @@
 # BOW
-MP-REP 
+- WeChat mini program
+- VueJs ( like) based framework for mini web applications that runs inside WeChat 
+- trending in china with over 200 millions user
 
 # USAGE
 - download WeChat IDE and install
